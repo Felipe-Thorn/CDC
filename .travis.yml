@@ -1,7 +1,11 @@
 language: C
 
-build: 
-  - cc helloWorld.c
-  - make
-
-
+compiler:
+  - gcc
+  
+before_script:
+  - mkdir build
+  - cd build
+  - cmake ..
+  
+script: make 
