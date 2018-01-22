@@ -1,1 +1,7 @@
 language: C
+
+build: 
+  - cc helloWorld.c
+  - make
+
+
