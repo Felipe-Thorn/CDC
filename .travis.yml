@@ -12,3 +12,6 @@ script:
   - make
   - sudo make install
 
+after_sucess: 
+  - cd ../../../../..
+  - cd /usr/local/bin/runHello.sh
