@@ -3,6 +3,9 @@ language: C
 compiler:
   - gcc
   
+before_install:
+  - sudo apt-get update
+ 
 before_script:
   - mkdir build
   - cd build
