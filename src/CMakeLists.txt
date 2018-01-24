@@ -14,6 +14,10 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
 #This rule specifies bin as the place to install hello
 install(TARGETS hello RUNTIME DESTINATION bin)
 
+#Rules to run at install time
+#Installs a code to show the current stage
+install(CODE "message(STATUS \"PARSING SCRIPT\")" )
+
 #Rules to run at install time:
 #Installs the message.cmake SCRIPT
 #These simple script is in the same dir.
