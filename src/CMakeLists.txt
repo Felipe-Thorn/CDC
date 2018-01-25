@@ -25,7 +25,7 @@ message(STATUS "The library path ABB_LIB is " ${ABB_LIB})
 #target_link_libraries(abb ${ABB_LIB})
 
 #Sets EXECUTABLE_OUTPUT_PATH as the bin subdir in build dir
-set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
+#set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
 
 #Rules to run at install time:
 #hello is an executable, so he must be treated as a RUNTIME target
