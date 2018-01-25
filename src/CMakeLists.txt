@@ -8,7 +8,7 @@ message(STATUS "CMakeLists in src")
 set(Source main.c abb.c)
 
 #Adds an executable from src dir
-add_executable(abb ${Fonte})
+#add_executable(abb ${Fonte})
 
 #Includes the lib dir of the install (TARGETS [...] command
 #So it's files can be used
