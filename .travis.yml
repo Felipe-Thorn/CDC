@@ -5,15 +5,10 @@ compiler:
  
 before_script:
   - mkdir build
+  - mkdir headers
   - cd build
   - cmake ..
   
 script: 
   - make
   - sudo make install
-
-after_script:
-  - cd bin
-  - ./hello
-  - cd ../../../../../..
-  - /usr/local/bin/runAbb.sh
