@@ -57,7 +57,7 @@ find_library(ABB_LIB NAMES abb PATHS "/lib/")
 message(STATUS "Library path ABB_LIB is " ${ABB_LIB})
 
 #Adds an executable from src dir
-add_executable(hello ${Fonte})
+add_executable(abb ${Fonte})
 
 #Sets EXECUTABLE_OUTPUT_PATH as the bin subdir in build dir
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
