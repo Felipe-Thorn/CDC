@@ -16,6 +16,21 @@ script:
 after_script:
  - cd ../headers
  - ls
- - cd ../../../../../..
- - cd /tmp/usr/lib
+ - cd ..
+ - ls
+ - cd..
+ - ls
+ - cd ..
+ - ls
+ - cd ..
+ - ls
+ - cd ..
+ - ls
+ - cd ..
+ - ls
+ - cd tmp
+ - ls
+ - cd usr
+ - ls
+ - cd lib
  - ls
