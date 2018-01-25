@@ -37,21 +37,21 @@ install(CODE "message(STATUS \"CONFIGURING LIBS\")" )
 #was not informed, so, by the use of the standard path prefix,
 #it will be something like /usr/local/lib
 install(TARGETS abb_dynamic abb_static
-        LIBRARY DESTINATION  usr/local/lib
-        ARCHIVE DESTINATION  usr/local/lib)
+        LIBRARY DESTINATION /lib
+        ARCHIVE DESTINATION /lib)
         
 #Rules to run at install time:
 #abb.h is a file and it's installed in ${PROJECT_BINARY_DIR}/../lib
 #which means a folder in the top-level dir, called lib
-install(FILES abb.h DESTINATION usr/local/lib)
+install(FILES abb.h DESTINATION ${PROJECT_BINARY_DIR}/abb)
 
 #Includes the lib dir of the install (TARGETS [...] command
 #So it's files can be used
-include_directories(usr/local/lib)
+include_directories(../include/abb)
 
 #Seachs for abb named libraries in the lib dir included above
 #and stores the result in the variable ABB_LIB
-find_library(ABB_LIB NAMES abb PATHS "usr/local/lib/")
+find_library(ABB_LIB NAMES abb PATHS "../lib/")
 
 #Shows the path to the librarys
 message(STATUS "Library path ABB_LIB is " ${ABB_LIB})
