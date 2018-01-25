@@ -43,7 +43,7 @@ install(TARGETS abb_dynamic abb_static
 #Rules to run at install time:
 #abb.h is a file and it's installed in ${PROJECT_BINARY_DIR}/../lib
 #which means a folder in the top-level dir, called lib
-install(FILES abb.h DESTINATION ../include/abb)
+install(FILES abb.h DESTINATION ${PROJECT_BINARY_DIR}/abb)
 
 #Includes the lib dir of the install (TARGETS [...] command
 #So it's files can be used

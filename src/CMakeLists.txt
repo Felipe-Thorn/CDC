@@ -4,6 +4,8 @@ cmake_minimum_required(VERSION 3.5)
 #The actual CMakeLists file is the one in src dir
 message(STATUS "CMakeLists in src")
 
+SET(CMAKE_INSTALL_PREFIX "/tmp/usr")
+
 #List of source files
 set(Source main.c abb.c)
 
