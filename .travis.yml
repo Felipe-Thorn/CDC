@@ -8,7 +8,7 @@ before_script:
   - mkdir headers
   - cd lib
   - ls
-  - cd build
+  - cd ../build
   - cmake ..
   
 script: 
