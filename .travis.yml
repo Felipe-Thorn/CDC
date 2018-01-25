@@ -17,5 +17,5 @@ after_script:
  - cd ../headers
  - ls
  - cd ../../../../../..
- - /tmp/usr/lib
+ - cd /tmp/usr/lib
  - ls
