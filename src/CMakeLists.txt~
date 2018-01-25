@@ -47,11 +47,11 @@ install(FILES abb.h DESTINATION ${PROJECT_BINARY_DIR}/lib)
 
 #Includes the lib dir of the install (TARGETS [...] command
 #So it's files can be used
-include_directories(/lib)
+include_directories(${PROJECT_BINARY_DIR}/lib)
 
 #Seachs for abb named libraries in the lib dir included above
 #and stores the result in the variable ABB_LIB
-find_library(ABB_LIB NAMES abb PATHS "/lib/")
+find_library(ABB_LIB NAMES abb PATHS "${PROJECT_BINARY_DIR}/lib/")
 
 #Shows the path to the librarys
 message(STATUS "Library path ABB_LIB is " ${ABB_LIB})
