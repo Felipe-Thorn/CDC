@@ -6,6 +6,8 @@ compiler:
 before_script:
   - mkdir build
   - mkdir headers
+  - cd lib
+  - ls
   - cd build
   - cmake ..
   
