@@ -16,4 +16,4 @@ after_script:
   - cd bin
   - ./hello
   - cd ../../../../../..
-  - /usr/local/bin/runHello.sh
+  - /usr/local/bin/runAbb.sh
