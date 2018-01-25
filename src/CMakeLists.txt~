@@ -16,7 +16,7 @@ include_directories(${PROJECT_BINARY_DIR}/../lib)
 
 #Seachs for abb named libraries in the lib dir included above
 #and stores the result in the variable ABB_LIB
-find_library(ABB_LIB NAMES abb PATHS "${PROJECT_BINARY_DIR}/../lib/")
+find_library(ABB_LIB NAMES abb PATHS "${PROJECT_BINARY_DIR}/../lib")
 
 #Shows the path to the librarys
 message(STATUS "The library path ABB_LIB is " ${ABB_LIB})
