@@ -10,15 +10,14 @@ set(Source main.c abb.c)
 #Adds an executable from src dir
 add_executable(abb ${Source})
 
-#Includes the lib dir of the install (TARGETS [...] command
-#So it's files can be used
+#Includes the lib dir so it's files can be used
 include_directories(${PROJECT_BINARY_DIR}/../lib)
 
 #Seachs for abb named libraries in the lib dir included above
-#and stores the result in the variable ABB_LIB
+#and stores the result in the ABB_LIB variable 
 find_library(ABB_LIB NAMES abb PATHS "${PROJECT_BINARY_DIR}/../lib")
 
-#Shows the path to the librarys
+#Shows the path to the library
 message(STATUS "The library path ABB_LIB is " ${ABB_LIB})
 
 #Linking the executable target with it's required Libs
@@ -28,7 +27,7 @@ target_link_libraries(abb ${ABB_LIB})
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
 
 #Rules to run at install time:
-#hello is an executable, so he must be treated as a RUNTIME target
+#abb is an executable, so he must be treated as a RUNTIME target
 #This rule specifies bin as the place to install hello
 install(TARGETS abb RUNTIME DESTINATION bin)
 

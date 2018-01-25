@@ -1,7 +1,7 @@
 # CDC
 A Continuous Delivery set of tools for C language
 
-#Warning about find_library
+# Warning about find_library
 To acess a library, she must have been created and installed first.
 
 If the same cmake execution tries to create those files and acess then, there will be problems.
