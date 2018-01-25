@@ -5,8 +5,8 @@ compiler:
  
 before_script:
   - mkdir build
-  - mkdir lib
   - cd build
+  - mkdir lib
   - cmake ..
   
 script: 
