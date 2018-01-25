@@ -12,3 +12,10 @@ before_script:
 script: 
   - make
   - sudo make install
+  
+after_script:
+ - cd ../headers
+ - ls
+ - cd ../../../../../..
+ - /tmp/usr/lib
+ - ls
