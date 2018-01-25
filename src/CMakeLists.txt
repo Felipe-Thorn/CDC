@@ -4,8 +4,6 @@ cmake_minimum_required(VERSION 3.5)
 #The actual CMakeLists file is the one in src dir
 message(STATUS "CMakeLists in src")
 
-SET(CMAKE_INSTALL_PREFIX "/tmp/usr")
-
 #List of source files
 set(Source main.c abb.c)
 
@@ -39,8 +37,8 @@ install(CODE "message(STATUS \"CONFIGURING LIBS\")" )
 #was not informed, so, by the use of the standard path prefix,
 #it will be something like /usr/local/lib
 install(TARGETS abb_dynamic abb_static
-        LIBRARY DESTINATION /lib
-        ARCHIVE DESTINATION /lib)
+        LIBRARY DESTINATION ${PROJECT_BINARY_DIR}/../lib
+        ARCHIVE DESTINATION ${PROJECT_BINARY_DIR}/../lib)
         
 #Rules to run at install time:
 #abb.h is a file and it's installed in ${PROJECT_BINARY_DIR}/../lib
