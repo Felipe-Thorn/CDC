@@ -51,10 +51,10 @@ include_directories(usr/local/lib)
 
 #Seachs for abb named libraries in the lib dir included above
 #and stores the result in the variable ABB_LIB
-find_library(ABB_LIB NAMES abb PATHS usr/local/lib/")
+find_library(ABB_LIB NAMES abb PATHS "usr/local/lib/")
 
 #Shows the path to the librarys
-message(STATUS "Library path ABB_LIB is " ${ABB_LIB})
+message(STATUS "Library path ABB_LIB is "${ABB_LIB})
 
 #Adds an executable from src dir
 add_executable(abb ${Fonte})
