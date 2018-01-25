@@ -14,23 +14,5 @@ script:
   - sudo make install
   
 after_script:
- - cd ../headers
- - ls
- - cd ..
- - ls
- - cd..
- - ls
- - cd ..
- - ls
- - cd ..
- - ls
- - cd ..
- - ls
- - cd ..
- - ls
- - cd tmp
- - ls
- - cd usr
- - ls
- - cd lib
+ - cd ../lib
  - ls
