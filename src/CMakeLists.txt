@@ -1,10 +1,63 @@
+#Version requirement
 cmake_minimum_required(VERSION 3.5)
 
 #The actual CMakeLists file is the one in src dir
 message(STATUS "CMakeLists in src")
 
+#List of source files
+set(Source main.c abb.c)
+
+#Adds a dynamic library
+#Used dynamically. Loaded at Runtime
+add_library(abb_dynamic SHARED ${Source})
+
+#Sets the output name of the dynamic library as "abb"
+set_target_properties(abb_dynamic PROPERTIES OUTPUT_NAME "abb")
+
+#Sets the version and the soversion of the dynamic library
+#Where VERSION is the build version and SOVERSION is the API version
+set_target_properties(abb_dynamic PROPERTIES VERSION 1.2 SOVERSION 1)	
+
+#Adds a static library
+#Used to link other targets
+add_library(abb_static  STATIC ${Source})
+
+#Sets the output name of the static library as "abb"
+#Basically the same as the output name of the dynamic library
+#but this one doens't have version or soversion
+set_target_properties(abb_static PROPERTIES OUTPUT_NAME "abb")
+
+#Rules to run at install time
+#Installs a code to show the current stage
+install(CODE "message(STATUS \"CONFIGURING LIBS\")" )
+
+#Rules to run at install time:
+#Both, abb_dynamic and abb_static, are installed at /lib
+#one as a Lib and the other as an archive. The full path 
+#was not informed, so, by the use of the standard path prefix,
+#it will be something like /usr/local/lib
+install(TARGETS abb_dynamic abb_static
+        LIBRARY DESTINATION  /lib
+        ARCHIVE DESTINATION  /lib)
+        
+#Rules to run at install time:
+#abb.h is a file and it's installed in ${PROJECT_BINARY_DIR}/../lib
+#which means a folder in the top-level dir, called lib
+install(FILES abb.h DESTINATION ${PROJECT_BINARY_DIR}/lib)
+
+#Includes the lib dir of the install (TARGETS [...] command
+#So it's files can be used
+include_directories(/lib)
+
+#Seachs for abb named libraries in the lib dir included above
+#and stores the result in the variable ABB_LIB
+find_library(ABB_LIB NAMES abb PATHS "/lib/")
+
+#Shows the path to the librarys
+message(STATUS "Library path ABB_LIB is " ${ABB_LIB})
+
 #Adds an executable from src dir
-add_executable(hello main.c)
+add_executable(hello ${Fonte})
 
 #Sets EXECUTABLE_OUTPUT_PATH as the bin subdir in build dir
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
@@ -12,11 +65,7 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
 #Rules to run at install time:
 #hello is an executable, so he must be treated as a RUNTIME target
 #This rule specifies bin as the place to install hello
-install(TARGETS hello RUNTIME DESTINATION bin)
-
-#Rules to run at install time
-#Installs a code to show the current stage
-install(CODE "message(STATUS \"PARSING SCRIPT\")" )
+install(TARGETS abb RUNTIME DESTINATION bin)
 
 #Rules to run at install time:
 #Installs the message.cmake SCRIPT

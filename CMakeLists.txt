@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 3.5)
 
 #Name of the project
-project(HelloCMake C)
+project(LibsCMake C)
 
 #Verifies the host system and displays the result
 if(WIN32)
@@ -30,9 +30,9 @@ INSTALL(FILES README.md DESTINATION ${PROJECT_SOURCE_DIR})
 #Rules to run at install time:
 #runHello.sh is a program target and it's install destination is specified
 #to /usr/local/bin
-#In order tu run runHello.sh, add cd /usr/local/bin/runHello.sh 
+#In order tu run runAbb.sh, add cd /usr/local/bin/runHello.sh 
 #into script stage in .travis.yml
-INSTALL(PROGRAMS runHello.sh DESTINATION bin)
+INSTALL(PROGRAMS runAbb.sh DESTINATION bin)
 
 #Rules to run at install time:
 #doc/ is a directory target and it's install destination is specified

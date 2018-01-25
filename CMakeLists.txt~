@@ -30,7 +30,7 @@ INSTALL(FILES README.md DESTINATION ${PROJECT_SOURCE_DIR})
 #Rules to run at install time:
 #runHello.sh is a program target and it's install destination is specified
 #to /usr/local/bin
-#In order tu run runHello.sh, add /usr/local/bin/runHello.sh 
+#In order tu run runHello.sh, add cd /usr/local/bin/runHello.sh 
 #into script stage in .travis.yml
 INSTALL(PROGRAMS runHello.sh DESTINATION bin)
 
