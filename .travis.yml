@@ -19,4 +19,5 @@ after_script:
  - cd ../lib
  - ls
  - cd ..
- - /runSistema.sh
+ - ls
+ - runSistema.sh
