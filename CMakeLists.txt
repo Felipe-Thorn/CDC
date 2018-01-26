@@ -1,3 +1,4 @@
+#CMakeLists file: Top-level
 #Requires CMake 3.5 or superior
 cmake_minimum_required(VERSION 3.5)
 
@@ -34,9 +35,9 @@ INSTALL(FILES README.md DESTINATION ${PROJECT_SOURCE_DIR})
 #Rules to run at install time:
 #runHello.sh is a program target and it's install destination is specified
 #to /usr/local/bin
-#In order tu run runAbb.sh, add cd /usr/local/bin/runHello.sh 
+#In order tu run runSistema.sh, add cd /usr/local/bin/runHello.sh 
 #into script stage in .travis.yml
-INSTALL(PROGRAMS runAbb.sh DESTINATION bin)
+INSTALL(PROGRAMS runSistema.sh DESTINATION bin)
 
 #Rules to run at install time:
 #doc/ is a directory target and it's install destination is specified

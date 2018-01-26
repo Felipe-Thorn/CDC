@@ -10,7 +10,7 @@ int main(){
 	s.memo = RAM;
 
 	printf("\nSistema: %s"
-           "\nMemória: %d"
+           "\nMemória Ram: %d"
            "\n", s.nome, s.memo);
 
 }

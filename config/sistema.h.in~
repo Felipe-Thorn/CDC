@@ -7,9 +7,6 @@
 #cmakedefine UNIX @IS_UNIX@
 #cmakedefine ID @ID@
 
-
-struct system *s;
-
 struct system{
 
     char *nome;

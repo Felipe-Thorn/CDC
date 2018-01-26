@@ -3,9 +3,9 @@
 #include <stdio.h>
 
 #define RAM 8
-/* #undef NAME */
-
-struct system *s;
+/* #undef WINDOWS */
+#define UNIX "Unix"
+#define ID 2
 
 struct system{
 

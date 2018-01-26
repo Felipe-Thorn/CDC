@@ -15,4 +15,4 @@ struct system{
 
 };
 
-#endif // CONFIG_H
+#endif // SISTEMA_H
