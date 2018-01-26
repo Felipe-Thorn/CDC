@@ -28,6 +28,13 @@ message(STATUS "CMakeLists in top-level dir")
 INSTALL(FILES README.md DESTINATION ${PROJECT_SOURCE_DIR})
 
 #Rules to run at install time:
+#runHello.sh is a program target and it's install destination is specified
+#to /usr/local/bin
+#In order tu run runAbb.sh, add cd /usr/local/bin/runHello.sh 
+#into script stage in .travis.yml
+INSTALL(PROGRAMS runAbb.sh DESTINATION bin)
+
+#Rules to run at install time:
 #doc/ is a directory target and it's install destination is specified
 #to ${PROJECT_SOURCE_DIR}
 INSTALL(DIRECTORY doc/ DESTINATION ${PROJECT_SOURCE_DIR})

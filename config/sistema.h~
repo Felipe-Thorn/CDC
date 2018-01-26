@@ -1,0 +1,18 @@
+#ifndef SISTEMA_H
+#define SISTEMA_H
+#include <stdio.h>
+
+#define RAM 8
+/* #undef NAME */
+
+struct system *s;
+
+struct system{
+
+    char *nome;
+
+	int memo;	
+
+};
+
+#endif // CONFIG_H

@@ -15,6 +15,10 @@ endif()
 message(STATUS "BINARY dir: " ${PROJECT_BINARY_DIR})
 message(STATUS "SOURCE dir: " ${PROJECT_SOURCE_DIR})
 
+#Adds config subdirectory, that must have his own CMakeLists file
+#His CMakeLists file will be executed...
+add_subdirectory(config)
+
 #Adds src subdirectory, that must have his own CMakeLists file
 #His CMakeLists file will be executed...
 add_subdirectory(src)
