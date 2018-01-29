@@ -21,7 +21,7 @@ addons:
   coverity_scan:
     project: #project metadata
       name: "Felipe-Thorn/CDC"
-      version: 1.0
+      #version: 1.0
       description: "Build submitted via Travis CI"
     notification_email: lucasclashms@gmail.com
     #build_command_prepend: "" - no build command prepend needed, as CMake already done that
