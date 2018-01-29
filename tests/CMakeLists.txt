@@ -1,4 +1,6 @@
-cmake_minimum_required(VERSION 3.0)
+#CMakeLists file: tests
+#Requires CMake 3.5 or superior
+cmake_minimum_required(VERSION 3.5)
 
 #Includes the lib dir so it's files can be used
 include_directories(${PROJECT_BINARY_DIR}/../lib)
