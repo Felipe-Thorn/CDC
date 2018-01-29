@@ -29,10 +29,9 @@ before_script:
   - cd build
   - cmake ..
   
-script: if [ ${COVERITY_SCAN_BRANCH} != 1 ]; then
+script:
   - make
   - sudo make install
-  ; fi
   
 after_script:
  - ctest -V
