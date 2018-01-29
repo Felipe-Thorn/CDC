@@ -19,7 +19,7 @@ addons:
       description: "Build submitted via Travis CI"
     notification_email: lucasclashms@gmail.com
     build_command_prepend: "mkdir build; mkdir headers; cd build; cmake .."
-    build_command:   "make && make test && sudo make install"
+    build_command:   "make" #&& make test && sudo make install"
     branch_pattern: master #coverity_scan
  
 before_script:
