@@ -16,10 +16,7 @@ message(STATUS "The library path CMK_LIB is " ${CMK_LIB})
 add_executable(unit_test cmockatest.c)
 
 #Linking the executable target with it's required Libs
-target_link_libraries(teste ${CMK_LIB})
+target_link_libraries(unit_test ${CMK_LIB})
 
 #Adds a test named Test to the target test
 add_test(Test unit_test)
-
-#Linking the executable target with it's required Libs
-target_link_libraries(unit_test ${MOCKA_LIB})
