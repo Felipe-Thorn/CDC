@@ -18,4 +18,6 @@ int main(){
            "\nRAM Memory: %d"
            "\n", s.nome, s.memo);
 
+	return 0;
+
 }

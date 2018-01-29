@@ -16,6 +16,11 @@ endif()
 message(STATUS "BINARY dir: " ${PROJECT_BINARY_DIR})
 message(STATUS "SOURCE dir: " ${PROJECT_SOURCE_DIR})
 
+#Allows the creation of test targets
+#Those targets may be defined in other subdirectory
+#but these directory need to be included
+enable_testing()
+
 #Adds config subdirectory, that must have his own CMakeLists file
 #His CMakeLists file will be executed...
 add_subdirectory(config)
@@ -23,6 +28,10 @@ add_subdirectory(config)
 #Adds src subdirectory, that must have his own CMakeLists file
 #His CMakeLists file will be executed...
 add_subdirectory(src)
+
+#Adds tests subdirectory, that must have his own CMakeLists file
+#His CMakeLists file will be executed...
+add_subdirectory(tests)
 
 #...and then the execution comes back here
 message(STATUS "CMakeLists in top-level dir")
