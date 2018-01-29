@@ -20,4 +20,4 @@ target_link_libraries(teste ${CMK_LIB})
 add_test(Test unit_test)
 
 #Linking the executable target with it's required Libs
-target_link_libraries(teste ${MOCKA_LIB})
+target_link_libraries(unit_test ${MOCKA_LIB})
