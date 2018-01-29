@@ -1,4 +1,4 @@
-# CDC ![build passing](https://travis-ci.org/Felipe-Thorn/CDC.svg?branch=master)
+# CDC ![https://travis-ci.org/Felipe-Thorn/CDC](https://travis-ci.org/Felipe-Thorn/CDC.svg?branch=master)
 A Continuous Delivery set of tools for C language
 
 # CMake
