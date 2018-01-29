@@ -18,4 +18,4 @@ That said, find_library wouldn't be able to actually find libraries, for they ar
 
 Add [ci skip] to the commit message, so it won't trigger a new build.
 
-#### You can find more details in the wiki pages
+#### You can find more details in the![ wiki pages](https://github.com/Felipe-Thorn/CDC/wiki)
