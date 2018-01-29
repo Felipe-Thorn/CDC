@@ -1,8 +1,11 @@
+#Project language
 language: C
 
+#Compiler to use. Note: Override by CMake call.
 compiler:
   - gcc
  
+#Environment Configuration.
 env:
   global:
    # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
@@ -12,18 +15,21 @@ env:
 before_install:
      - echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
 
+#Tools added
 addons:
+  #Coverity Scan does a static analysis of the code
   coverity_scan:
-    project:
+    project: #project metadata
       name: "Felipe-Thorn/CDC"
+      version: 1.0
       description: "Build submitted via Travis CI"
     notification_email: lucasclashms@gmail.com
-    build_command_prepend: ""
-    build_command:   "make" #&& make test && sudo make install"
-    branch_pattern: master #coverity_scan
+    #build_command_prepend: "" - no build command prepend needed, as CMake already done that
+    build_command:   "make && make test && sudo make install" #&& make test && sudo make install"
+    branch_pattern: master #coverity_scan - What branch to look for
  
-before_script:
-  - mkdir build
+before_script:#what to do before the script compiles the code
+  - mkdir build #Binary dir where CMake will put its resulting files
   - mkdir headers
   - cd build
   - cmake ..
