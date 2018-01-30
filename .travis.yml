@@ -1,3 +1,7 @@
+dist: trusty
+
+sudo: required
+
 language: C
 
 compiler:
@@ -27,9 +31,6 @@ addons:
     organization: "felipe-thorn-github" 
     token:
       secure: SONAR_TOKEN
-  script:
-    # other script steps might be done before running the actual analysis
-    - sonar-scanner
   
 before_script:
   - mkdir build
@@ -40,7 +41,12 @@ before_script:
 script:
   - make
   - sudo make install
+  - sonar-scanner
   
 after_script:
  - ctest -V
  - runSistema.sh
+ 
+ cache:
+  directories:
+    - '$HOME/.sonar/cache'
