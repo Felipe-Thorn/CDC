@@ -29,7 +29,7 @@ addons: #Code Analysis Tools
  
   sonarcloud:
     organization: "felipe-thorn-github" #Name of the organization. Can be found in https://sonarcloud.io/account/organizations
-    token: $SONAR_TOKEN                 #Environment variable defined in settings
+    token: $SONAR_TOKEN                 #Environment variable defined in settings Token to SonarCloud
   
 before_script:
   - mkdir build
