@@ -43,6 +43,6 @@ after_script:
  - ctest -V
  - runSistema.sh
  
- cache:
-  directories:
-    - '$HOME/.sonar/cache'
+ #cache:
+  #directories:
+   # - '$HOME/.sonar/cache'
