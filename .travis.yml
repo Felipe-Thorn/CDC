@@ -12,20 +12,24 @@ env:
 before_install:
      - echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
 
-addons:
+cache:  #Sonar Cache don't usually changes
+  directories:
+    - '$HOME/.sonar/cache'
+
+addons: #Code Analysis Tools
   coverity_scan:
     project:
       name: "Felipe-Thorn/CDC"
       version: 1.0
       description: "Build submitted via Travis CI"
     notification_email: lucasclashms@gmail.com
-    build_command_prepend: ""
+    build_command_prepend: "" #No need for this, CMake already done his job.
     build_command: "make"
-    branch_pattern: coverity_scan#master
+    branch_pattern: coverity_scan #change coverity_scan to master in order to produce a analysis
  
   sonarcloud:
     organization: "felipe-thorn-github" 
-    token: $SONAR_TOKEN
+    token: $SONAR_TOKEN #Environment variable defined in settings
   
 before_script:
   - mkdir build
@@ -36,16 +40,9 @@ before_script:
 script:
   - make
   - sudo make install
-  - build-wrapper-linux-x86-64 --out-dir bw-output make
-  - ls
+  - build-wrapper-linux-x86-64 --out-dir bw-output make #The output is written in build
   - cd ..
-  - ls
-  - sonar-scanner
-
-cache:
-  directories:
-    - '$HOME/.sonar/cache'
+  - sonar-scanner #sonar-project.properties must access the correct output path
     
 after_script:
- - ctest -V
- - runSistema.sh
+ - ctest -V #make test also works, bu ctest -V gives a better log
