@@ -24,7 +24,7 @@ SET( RAM 8 )
 
 #Command to configure the file sistema.h with the definitions in sistema.h.in.
 #sistema.h.in contains some of the variables defined in this file
-CONFIGURE_FILE( ${CMAKE_SOURCE_DIR}/config/sistema.h.in ${CMAKE_SOURCE_DIR}/config/sistema.h )
+CONFIGURE_FILE( ${CMAKE_SOURCE_DIR}/src/config/sistema.h.in ${CMAKE_SOURCE_DIR}/src/config/sistema.h )
 
 #Adds the executable sistema
 add_executable(sistema sistema.c)

@@ -23,15 +23,15 @@ enable_testing()
 
 #Adds config subdirectory, that must have his own CMakeLists file
 #His CMakeLists file will be executed...
-add_subdirectory(config)
+add_subdirectory(src/config)
 
 #Adds src subdirectory, that must have his own CMakeLists file
 #His CMakeLists file will be executed...
-add_subdirectory(src)
+add_subdirectory(src/sources)
 
 #Adds tests subdirectory, that must have his own CMakeLists file
 #His CMakeLists file will be executed...
-add_subdirectory(tests)
+add_subdirectory(src/tests)
 
 #...and then the execution comes back here
 message(STATUS "CMakeLists in top-level dir")
