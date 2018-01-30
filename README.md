@@ -1,4 +1,4 @@
-# CDC [![Build Status](https://travis-ci.org/Felipe-Thorn/CDC.svg?branch=master)](https://travis-ci.org/Felipe-Thorn/CDC) [![Coverity Status](https://scan.coverity.com/projects/14981/badge.svg)](https://scan.coverity.com/projects/felipe-thorn-cdc?tab=overview)
+# CDC [![Build Status](https://travis-ci.org/Felipe-Thorn/CDC.svg?branch=master)](https://travis-ci.org/Felipe-Thorn/CDC) [![Coverity Status](https://scan.coverity.com/projects/14981/badge.svg)](https://scan.coverity.com/projects/felipe-thorn-cdc?tab=overview) [![Quality Gate](https://sonarqube.com/api/badges/gate?key=felipe-thorn-github)](https://sonarqube.com/dashboard/index/felipe-thorn-github)
 A Continuous Delivery set of tools for C language
 
 # CMake
