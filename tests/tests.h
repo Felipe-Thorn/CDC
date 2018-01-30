@@ -11,6 +11,9 @@
 #include <setjmp.h>
 #include <cmocka.h>
 
+//Declares the functions
+int inverser_numbers(int a, int b);
+
 //Declares the void tests
 void null_test_success(void **state);
 void inverse_test_success(void **state);

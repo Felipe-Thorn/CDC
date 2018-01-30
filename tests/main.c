@@ -8,9 +8,6 @@ const struct CMUnitTest tests[] = {
     
 int main(void){
 	
-	//calls the inverse_numbers
-	inverse_numbers( 10, -11);
-	
 	//returns the result of the tests
 	return cmocka_run_group_tests(tests, NULL, NULL);
 }

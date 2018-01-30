@@ -8,24 +8,16 @@ void null_test_success(void **state) {
 }
 
 //Function that makes a plus b
-int inverse_numbers(int a, int b, void **state){
+int inverse_numbers(int a, int b){
 
-	 int *answer = malloc(sizeof(int));
-     if (!*answer) {
-         return -1;
-     }
-
-     *answer = a + b;
-     *state = answer;
-
-     return 0;
+     return a + b;
 
 }
 
 /* A test case that verifies if a is the inverse of b. */
 void inverse_test_success(void **state) {
 
-     int *answer = *state;
+     int answer = inverse_numbers(10, -10);
          
      assert_int_equal(answer, 0);
    
