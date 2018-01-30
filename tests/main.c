@@ -6,18 +6,11 @@ const struct CMUnitTest tests[] = {
     cmocka_unit_test(inverse_test_success),
 };
     
-int main(void) {
-	
-        int res;
+int main(void){
 	
 	//calls the inverse_numbers
-	inverse_numbers( 10, -10);
+	inverse_numbers( 10, -11);
 	
 	//returns the result of the tests
-	res = cmocka_run_group_tests(tests, NULL, NULL);
-    
-        free (answer);
-        free (state);
-	
-        return res;
+	return cmocka_run_group_tests(tests, NULL, NULL);
 }
