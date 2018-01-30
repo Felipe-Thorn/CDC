@@ -23,6 +23,14 @@ addons:
     build_command: "make"
     branch_pattern: master #coverity_scan
  
+  sonarcloud:
+    organization: "felipe-thorn-github" 
+    token:
+      secure: SONAR_TOKEN
+  script:
+    # other script steps might be done before running the actual analysis
+    - sonar-scanner
+  
 before_script:
   - mkdir build
   - mkdir headers
