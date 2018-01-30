@@ -25,8 +25,7 @@ addons:
  
   sonarcloud:
     organization: "felipe-thorn-github" 
-    token:
-      secure: SONAR_TOKEN
+    token: $SONAR_TOKEN
   
 before_script:
   - mkdir build
