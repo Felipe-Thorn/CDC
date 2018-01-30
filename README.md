@@ -1,8 +1,7 @@
 ***
 # CDC  [![Build Status](https://travis-ci.org/Felipe-Thorn/CDC.svg?branch=master)](https://travis-ci.org/Felipe-Thorn/CDC) [![Coverity Status](https://scan.coverity.com/projects/14981/badge.svg)](https://scan.coverity.com/projects/felipe-thorn-cdc?tab=overview) [![Quality Gate](https://sonarqube.com/api/badges/gate?key=felipe-thorn-github)](https://sonarcloud.io/dashboard?id=felipe-thorn-github)
-*** 
 #### A Continuous Delivery set of tools for C language
-
+***
 # CMake
 
 ## Warning about find_library
@@ -18,6 +17,6 @@ That said, find_library wouldn't be able to actually find libraries, for they ar
 
 ## Not every commit should trigger the build
 
-Add [ci skip] to the commit message, so it won't trigger a new build.
+Add [ci skip] into the commit message, so it won't trigger a new build.
 
 #### You can find more details in the![ wiki pages](https://github.com/Felipe-Thorn/CDC/wiki)
