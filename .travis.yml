@@ -38,11 +38,11 @@ script:
   - make
   - sudo make install
   - sonar-scanner
-  
+
+cache:
+  directories:
+    - '$HOME/.sonar/cache'
+    
 after_script:
  - ctest -V
  - runSistema.sh
- 
- #cache:
-  #directories:
-   # - '$HOME/.sonar/cache'
