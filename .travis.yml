@@ -24,12 +24,12 @@ addons: #Code Analysis Tools
       description: "Build submitted via Travis CI"
     notification_email: lucasclashms@gmail.com
     build_command_prepend: "" #No need for this, CMake already done his job.
-    build_command: "make"
+    build_command: "make"     #Build for coverity-scan analysis
     branch_pattern: coverity_scan #change coverity_scan to master in order to produce a analysis
  
   sonarcloud:
-    organization: "felipe-thorn-github" 
-    token: $SONAR_TOKEN #Environment variable defined in settings
+    organization: "felipe-thorn-github" #Name of the organization. Can be found in https://sonarcloud.io/account/organizations
+    token: $SONAR_TOKEN                 #Environment variable defined in settings
   
 before_script:
   - mkdir build
@@ -40,9 +40,10 @@ before_script:
 script:
   - make
   - sudo make install
-  - build-wrapper-linux-x86-64 --out-dir bw-output make #The output is written in build
+  - build-wrapper-linux-x86-64 --out-dir bw-output make   #The output is written in build
   - cd ..
-  - sonar-scanner #sonar-project.properties must access the correct output path
+  - sonar-scanner   #sonar-project.properties must access the correct output path
     
 after_script:
- - ctest -V #make test also works, bu ctest -V gives a better log
+ - cd build   #the tests are in the build directory
+ - ctest -V   #make test also works, bu ctest -V gives a better log
