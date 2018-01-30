@@ -7,11 +7,17 @@ const struct CMUnitTest tests[] = {
 };
     
 int main(void) {
-
+	
+        int res;
+	
 	//calls the inverse_numbers
 	inverse_numbers( 10, -10);
-
+	
 	//returns the result of the tests
-	return cmocka_run_group_tests(tests, NULL, NULL);
+	res = cmocka_run_group_tests(tests, NULL, NULL);
     
+        free (answer);
+        free (state);
+	
+        return res;
 }
