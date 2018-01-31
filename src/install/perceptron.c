@@ -14,7 +14,6 @@ neuron initialize_neuron(){
 }
 
 //Initializes a individual (new test entry).
-<<<<<<< HEAD
 individual initialize_individual(individual i, int x, int y, int s){
 	individual aux;
 
@@ -46,7 +45,7 @@ int calculates_output(neuron n){
 }
 
 //Calculating a new synapse for a neuron.
-neurcalculates_sinapsepse(individual i, neuron n, int output){
+neuron calculates_sinapse(individual i, neuron n, int output){
 
 	neuron aux;
 
@@ -78,7 +77,6 @@ void new_epoch(individual vet[4], neuron n){
 
 		printf("\n-----------------------------------------------");
 
-<<<<<<< HEAD
 		printf("\nEpoch Neuron: wb = %d ---- w1 = %d ---- w2 = %d\n", n.wb, n.w1, n.w2);	//Shows the first neuron of the epoch.
 
 		sum = 0;
