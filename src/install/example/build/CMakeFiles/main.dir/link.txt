@@ -1,0 +1,1 @@
+/usr/bin/cc   -rdynamic CMakeFiles/main.dir/home/osp/Lucas/GitHub/src/install/main.c.o  -o bin/main -lperceptron 

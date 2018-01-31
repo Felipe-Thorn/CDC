@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/osp/Lucas/GitHub/src/install/main.c
+perceptron.h
+/home/osp/Lucas/GitHub/src/install/perceptron.h
+
+/home/osp/Lucas/GitHub/src/install/perceptron.h
+stdio.h
+-
+stdlib.h
+-
+time.h
+-
+
