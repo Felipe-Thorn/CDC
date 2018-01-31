@@ -1,7 +1,6 @@
 #include "perceptron.h"
 
 int main(int argc,char *argv[]){
-
 	individual vet[4];
 
 	neuron  neu;
@@ -17,7 +16,6 @@ int main(int argc,char *argv[]){
 
 		scanf("%d",& s);
 
-
 		vet[i] = initialize_individual(vet[i] , e1, e2, s);
 
 	}
@@ -29,11 +27,8 @@ int main(int argc,char *argv[]){
 	for(i = 0; i < 4; i++)
 		printf("\nIndividual: %d X: %d Y: %d S: %d\n", i+1, vet[i].x, vet[i].y, vet[i].o_expected);
 
-		new_epoch(vet, neu);
+	new_epoch(vet, neu);
 
-		vet[i] = initialize_individual(vet[i] , e1, e2, s);
-
-	}
-
-    exit(0);
+    exit(EXIT_SUCCESS);
 }
+
