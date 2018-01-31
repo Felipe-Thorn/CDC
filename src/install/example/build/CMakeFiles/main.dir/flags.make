@@ -6,5 +6,5 @@ C_FLAGS =
 
 C_DEFINES = 
 
-C_INCLUDES = -I/home/osp/Lucas/CMake_Tests/src/install/example/tmp/usr/lib 
+C_INCLUDES = -I/home/osp/Lucas/GitHub/src/install/example/tmp/usr/lib 
 

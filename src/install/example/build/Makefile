@@ -48,10 +48,10 @@ RM = /usr/local/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/osp/Lucas/CMake_Tests/src/install/example
+CMAKE_SOURCE_DIR = /home/osp/Lucas/GitHub/src/install/example
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/osp/Lucas/CMake_Tests/src/install/example/build
+CMAKE_BINARY_DIR = /home/osp/Lucas/GitHub/src/install/example/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -126,9 +126,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/osp/Lucas/CMake_Tests/src/install/example/build/CMakeFiles /home/osp/Lucas/CMake_Tests/src/install/example/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/osp/Lucas/GitHub/src/install/example/build/CMakeFiles /home/osp/Lucas/GitHub/src/install/example/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/osp/Lucas/CMake_Tests/src/install/example/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/osp/Lucas/GitHub/src/install/example/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -169,32 +169,32 @@ main/fast:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
-main.o: main.c.o
+home/osp/Lucas/GitHub/src/install/main.o: home/osp/Lucas/GitHub/src/install/main.c.o
 
-.PHONY : main.o
+.PHONY : home/osp/Lucas/GitHub/src/install/main.o
 
 # target to build an object file
-main.c.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.c.o
-.PHONY : main.c.o
+home/osp/Lucas/GitHub/src/install/main.c.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/osp/Lucas/GitHub/src/install/main.c.o
+.PHONY : home/osp/Lucas/GitHub/src/install/main.c.o
 
-main.i: main.c.i
+home/osp/Lucas/GitHub/src/install/main.i: home/osp/Lucas/GitHub/src/install/main.c.i
 
-.PHONY : main.i
+.PHONY : home/osp/Lucas/GitHub/src/install/main.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.c.i
-.PHONY : main.c.i
+home/osp/Lucas/GitHub/src/install/main.c.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/osp/Lucas/GitHub/src/install/main.c.i
+.PHONY : home/osp/Lucas/GitHub/src/install/main.c.i
 
-main.s: main.c.s
+home/osp/Lucas/GitHub/src/install/main.s: home/osp/Lucas/GitHub/src/install/main.c.s
 
-.PHONY : main.s
+.PHONY : home/osp/Lucas/GitHub/src/install/main.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.c.s
-.PHONY : main.c.s
+home/osp/Lucas/GitHub/src/install/main.c.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/osp/Lucas/GitHub/src/install/main.c.s
+.PHONY : home/osp/Lucas/GitHub/src/install/main.c.s
 
 # Help Target
 help:
@@ -209,9 +209,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... main"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... home/osp/Lucas/GitHub/src/install/main.o"
+	@echo "... home/osp/Lucas/GitHub/src/install/main.i"
+	@echo "... home/osp/Lucas/GitHub/src/install/main.s"
 .PHONY : help
 
 

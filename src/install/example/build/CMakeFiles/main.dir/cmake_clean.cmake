@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/main.dir/main.c.o"
+  "CMakeFiles/main.dir/home/osp/Lucas/GitHub/src/install/main.c.o"
   "bin/main.pdb"
   "bin/main"
 )

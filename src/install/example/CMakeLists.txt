@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 3.0)
 
 #Lista de fontes para a compilação da target executable
-set(Fonte main.c)
+set(Fonte ../main.c)
 
 #Adiciona a target executável a partir dos arquivos desse subdiretório
 add_executable	(main ${Fonte})

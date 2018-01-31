@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/osp/Lucas/CMake_Tests/src/install/example/main.c
+/home/osp/Lucas/GitHub/src/install/main.c
 perceptron.h
-/home/osp/Lucas/CMake_Tests/src/install/example/perceptron.h
+/home/osp/Lucas/GitHub/src/install/perceptron.h
 
-/home/osp/Lucas/CMake_Tests/src/install/example/perceptron.h
+/home/osp/Lucas/GitHub/src/install/perceptron.h
 stdio.h
 -
 stdlib.h

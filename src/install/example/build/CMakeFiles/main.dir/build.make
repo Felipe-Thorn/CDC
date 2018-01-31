@@ -43,10 +43,10 @@ RM = /usr/local/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/osp/Lucas/CMake_Tests/src/install/example
+CMAKE_SOURCE_DIR = /home/osp/Lucas/GitHub/src/install/example
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/osp/Lucas/CMake_Tests/src/install/example/build
+CMAKE_BINARY_DIR = /home/osp/Lucas/GitHub/src/install/example/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/main.dir/depend.make
@@ -57,42 +57,42 @@ include CMakeFiles/main.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/main.dir/flags.make
 
-CMakeFiles/main.dir/main.c.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/osp/Lucas/CMake_Tests/src/install/example/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/main.dir/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/main.dir/main.c.o   -c /home/osp/Lucas/CMake_Tests/src/install/example/main.c
+CMakeFiles/main.dir/home/osp/Lucas/GitHub/src/install/main.c.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/home/osp/Lucas/GitHub/src/install/main.c.o: /home/osp/Lucas/GitHub/src/install/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/osp/Lucas/GitHub/src/install/example/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/main.dir/home/osp/Lucas/GitHub/src/install/main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/main.dir/home/osp/Lucas/GitHub/src/install/main.c.o   -c /home/osp/Lucas/GitHub/src/install/main.c
 
-CMakeFiles/main.dir/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/osp/Lucas/CMake_Tests/src/install/example/main.c > CMakeFiles/main.dir/main.c.i
+CMakeFiles/main.dir/home/osp/Lucas/GitHub/src/install/main.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/home/osp/Lucas/GitHub/src/install/main.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/osp/Lucas/GitHub/src/install/main.c > CMakeFiles/main.dir/home/osp/Lucas/GitHub/src/install/main.c.i
 
-CMakeFiles/main.dir/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/osp/Lucas/CMake_Tests/src/install/example/main.c -o CMakeFiles/main.dir/main.c.s
+CMakeFiles/main.dir/home/osp/Lucas/GitHub/src/install/main.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/home/osp/Lucas/GitHub/src/install/main.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/osp/Lucas/GitHub/src/install/main.c -o CMakeFiles/main.dir/home/osp/Lucas/GitHub/src/install/main.c.s
 
-CMakeFiles/main.dir/main.c.o.requires:
+CMakeFiles/main.dir/home/osp/Lucas/GitHub/src/install/main.c.o.requires:
 
-.PHONY : CMakeFiles/main.dir/main.c.o.requires
+.PHONY : CMakeFiles/main.dir/home/osp/Lucas/GitHub/src/install/main.c.o.requires
 
-CMakeFiles/main.dir/main.c.o.provides: CMakeFiles/main.dir/main.c.o.requires
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.c.o.provides.build
-.PHONY : CMakeFiles/main.dir/main.c.o.provides
+CMakeFiles/main.dir/home/osp/Lucas/GitHub/src/install/main.c.o.provides: CMakeFiles/main.dir/home/osp/Lucas/GitHub/src/install/main.c.o.requires
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/home/osp/Lucas/GitHub/src/install/main.c.o.provides.build
+.PHONY : CMakeFiles/main.dir/home/osp/Lucas/GitHub/src/install/main.c.o.provides
 
-CMakeFiles/main.dir/main.c.o.provides.build: CMakeFiles/main.dir/main.c.o
+CMakeFiles/main.dir/home/osp/Lucas/GitHub/src/install/main.c.o.provides.build: CMakeFiles/main.dir/home/osp/Lucas/GitHub/src/install/main.c.o
 
 
 # Object files for target main
 main_OBJECTS = \
-"CMakeFiles/main.dir/main.c.o"
+"CMakeFiles/main.dir/home/osp/Lucas/GitHub/src/install/main.c.o"
 
 # External object files for target main
 main_EXTERNAL_OBJECTS =
 
-bin/main: CMakeFiles/main.dir/main.c.o
+bin/main: CMakeFiles/main.dir/home/osp/Lucas/GitHub/src/install/main.c.o
 bin/main: CMakeFiles/main.dir/build.make
 bin/main: /lib/libperceptron.so
 bin/main: CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/osp/Lucas/CMake_Tests/src/install/example/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable bin/main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/osp/Lucas/GitHub/src/install/example/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable bin/main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -100,7 +100,7 @@ CMakeFiles/main.dir/build: bin/main
 
 .PHONY : CMakeFiles/main.dir/build
 
-CMakeFiles/main.dir/requires: CMakeFiles/main.dir/main.c.o.requires
+CMakeFiles/main.dir/requires: CMakeFiles/main.dir/home/osp/Lucas/GitHub/src/install/main.c.o.requires
 
 .PHONY : CMakeFiles/main.dir/requires
 
@@ -109,6 +109,6 @@ CMakeFiles/main.dir/clean:
 .PHONY : CMakeFiles/main.dir/clean
 
 CMakeFiles/main.dir/depend:
-	cd /home/osp/Lucas/CMake_Tests/src/install/example/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/osp/Lucas/CMake_Tests/src/install/example /home/osp/Lucas/CMake_Tests/src/install/example /home/osp/Lucas/CMake_Tests/src/install/example/build /home/osp/Lucas/CMake_Tests/src/install/example/build /home/osp/Lucas/CMake_Tests/src/install/example/build/CMakeFiles/main.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/osp/Lucas/GitHub/src/install/example/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/osp/Lucas/GitHub/src/install/example /home/osp/Lucas/GitHub/src/install/example /home/osp/Lucas/GitHub/src/install/example/build /home/osp/Lucas/GitHub/src/install/example/build /home/osp/Lucas/GitHub/src/install/example/build/CMakeFiles/main.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/main.dir/depend
 

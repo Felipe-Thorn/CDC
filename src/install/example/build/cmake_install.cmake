@@ -1,4 +1,4 @@
-# Install script for directory: /home/osp/Lucas/CMake_Tests/src/install/example
+# Install script for directory: /home/osp/Lucas/GitHub/src/install/example
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,7 +44,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/main"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/osp/Lucas/CMake_Tests/src/install/example/build/bin/main")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/osp/Lucas/GitHub/src/install/example/build/bin/main")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/main" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/main")
     if(CMAKE_INSTALL_DO_STRIP)
@@ -61,5 +61,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/osp/Lucas/CMake_Tests/src/install/example/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/osp/Lucas/GitHub/src/install/example/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
