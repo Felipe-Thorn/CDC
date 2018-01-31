@@ -31,9 +31,9 @@ int main(int argc,char *argv[]){
 
 		new_epoch(vet, neu);
 
-		vet[i] = initialize_individuo(vet[i] , e1, e2, s);
+		vet[i] = initialize_individual(vet[i] , e1, e2, s);
 
 	}
 
-    exit(EXIT_SUCCESS);
+    exit(0);
 }
