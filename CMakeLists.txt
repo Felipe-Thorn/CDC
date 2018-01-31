@@ -33,6 +33,10 @@ add_subdirectory(src/sources)
 #His CMakeLists file will be executed...
 add_subdirectory(src/tests)
 
+#Adds install+examples subdirectory, that must have his own CMakeLists file
+#His CMakeLists file will be executed...
+add_subdirectory(src/install)
+
 #...and then the execution comes back here
 message(STATUS "CMakeLists in top-level dir")
 
