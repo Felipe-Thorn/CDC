@@ -95,7 +95,6 @@ void nova_epoca(individuo vet[4], neuronio n){
 				ran = rand() % 4;//Try to find a new test.
 
 				if(usado[ran] == 0){//If the test was already done at this epoch.
-.
 					check = 0;
 					i = ran;
 					usado[ran] = 1;
