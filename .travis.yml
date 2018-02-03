@@ -50,5 +50,6 @@ jobs:
         - chmod +x Scripts_Travis/package.sh
         - Scripts_Travis/prepare.sh
         - Scripts_Travis/build.sh
+        - ls
         - Scripts_Travis/package.sh
         
