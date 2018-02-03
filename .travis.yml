@@ -13,6 +13,8 @@ before_install:
      - echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
      - chmod +x Scripts_Travis/prepare.sh
      - chmod +x Scripts_Travis/build.sh
+     - chmod +x Scripts_Travis/tests.sh
+
      
 cache:  #Sonar Cache don't usually changes
   directories:
@@ -40,8 +42,7 @@ script:
   - Scripts_Travis/build.sh
     
 after_script:
- - cd build   #the tests are in the build directory
- - ctest -V   #make test also works, bu ctest -V gives a better log
+  - Scripts_Travis/tests.sh
  - cd ../src/install/example
  - mkdir build
  - ls
