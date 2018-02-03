@@ -14,7 +14,7 @@ before_install:
      - chmod +x Scripts_Travis/prepare.sh
      - chmod +x Scripts_Travis/build.sh
      - chmod +x Scripts_Travis/tests.sh
-
+     - chmod +x Scripts_Travis/package.sh
      
 cache:  #Sonar Cache don't usually changes
   directories:
@@ -43,11 +43,5 @@ script:
     
 after_script:
   - Scripts_Travis/tests.sh
-  - cd ../src/install/example
-  - mkdir build
-  - ls
-  - cd build
-  - cmake ..
-  - make
-  - sudo make install
-  - sudo make package
+  - Scripts_Travis/package.sh
+  
