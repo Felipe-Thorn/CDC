@@ -43,18 +43,15 @@ script:
   - build-wrapper-linux-x86-64 --out-dir bw-output make   #The output is written in build
   - cd ..
   - sonar-scanner   #sonar-project.properties must access the correct output path
-
-
-jobs:
-  include:
-    - after_script:
-        - cd build
-        - ctest -V
-    - after_script:
-        - cd src/install/example
-        - mkdir build
-        - cd build
-        - cmake ..
-        - make
-        - sudo make install
-- sudo make package
+    
+after_script:
+ - cd build   #the tests are in the build directory
+ - ctest -V   #make test also works, bu ctest -V gives a better log
+ - cd ../src/install/example
+ - mkdir build
+ - ls
+ - cd build
+ - cmake ..
+ - make
+ - sudo make install
+ - sudo make package
