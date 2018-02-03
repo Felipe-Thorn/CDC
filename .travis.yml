@@ -34,7 +34,7 @@ addons: #Code Analysis Tools
 before_script:
   - ls
   - cd Scripts_Travis
-  - prepare.sh
+  - ./prepare.sh
   
 script:
   - make
