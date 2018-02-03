@@ -50,4 +50,5 @@ after_script:
  - cd src/install/example/build
  - cmake ..
  - make
- - sudo make packages
+ - sudo make install
+ - sudo make package
