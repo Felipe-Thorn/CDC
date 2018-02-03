@@ -5,7 +5,7 @@ compiler:
 
 stages:
   - prepare
-  #- build
+  - before_build
   #- test
   #- pack
 
@@ -18,7 +18,14 @@ job:
   include:
       - stage: prepare
         script: echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-    
-
+  
+       -stage: before_build
+        script:
+            - mkdir build
+            - mkdir headers
+            - cd build
+            - cmake ..
+        
 cache:  #Sonar Cache don't usually changes
   directories:
     - '$HOME/.sonar/cache'
@@ -38,12 +45,6 @@ addons: #Code Analysis Tools
     organization: "felipe-thorn-github" #Name of the organization. Can be found in https://sonarcloud.io/account/organizations
     token: $SONAR_TOKEN                 #Environment variable defined in settings Token to SonarCloud
   
-before_script:
-  - mkdir build
-  - mkdir headers
-  - cd build
-  - cmake ..
-  #- stage: prepare
   
 script:
   - make
