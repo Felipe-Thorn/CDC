@@ -33,7 +33,7 @@ addons: #Code Analysis Tools
   
 before_script:
   - ls
-  - chmod +x /Scripts_Travis/prapare.sh
+  - chmod +x /Scripts_Travis/prepare.sh
   - /Scripts_Travis/prepare.sh
   
 script:
