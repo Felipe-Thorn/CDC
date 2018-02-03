@@ -8,7 +8,6 @@ env:
    # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
    #   via the "travis encrypt" command using the project repo's public key
    - secure: "NPuvxSfw04FPenPhMoMpkT7JMiAhwCHFz6BrPcHQpilGAZBH/FUOBuKDiVMlITnqAM3weQGTr47QAp2VbZgFgoHqTxgFH5wLYxWDGSctn7yo2cO5yo8evjsB4j6Sbgz8yeT1xlZwBJOysojjJNJ/1Mr0AESKgzVVyint5T0u7lNpHiHqVBoK7hqlPZwg3dZPPc0ML5jd6lCU5Fq7G6+T3dCgqZMhssKW4ja9+/VY8aA9V456c7BMsFE9ML/Lcu0guLTnS9iJ5qw+O3B+kXsTJN+wA4kUcMiuIYvqinzL0BXpPNV7qE0xz3g/4YOkRkotqzAjH5eVw3WDveDfmvEK9Uq4HQDbbcxqboW3HUwER51rxOt8Yit4lZR/xrX78m4GJIGl92ykWFg8ubVJvKC+9tsc23xX4XE7VjcgsSv9TAAfXwIfG2fMy/icDnJVll93c6a268pnDYZRO00uCgE5QcfpSZTcpkCLr19Hn6mriOZeEy52jqwnE05WHa2Ai3v66AwN5oK2UIPDd9Ydah0mxdsTefisjWgAUVDgg8Qkpw6XS4Mg8o4ymyazDMmhm75BzQemWRGzC8l6bzfL+mKIGg0WWfGrvd9Okh0Urrcw+7KeNIamovt8bcO75J5Yrrw1/51F38+lfJ5nW8Zd710UC9ngHd4d+k7emUTd0GWJrXI="
-   - PATH=$HOME/.local/bin:$PATH
    
 addons: #Code Analysis Tools
   coverity_scan:
