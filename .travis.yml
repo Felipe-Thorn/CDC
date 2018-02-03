@@ -31,20 +31,24 @@ cache:  #Sonar Cache don't usually changes
 
 jobs:
   include:
-    - stage: giving permissions and certificate
+    - stage: show certificate
       script: 
-        - chmod +x Scripts_Travis/permissions.sh
-        - Scripts_Travis/permissions.sh
         - echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
     
     - stage: prepare and build
-      script: 
+      script:
+        - chmod +x Scripts_Travis/prepare.sh
         - Scripts_Travis/prepare.sh
+        - chmod +x Scripts_Travis/build.sh
         - Scripts_Travis/build.sh
     
     - stage: tests
-      script: Scripts_Travis/tests.sh
+      script: 
+        - chmod +x Scripts_Travis/tests.sh
+        - Scripts_Travis/tests.sh
 
     - stage: package
-      script: Scripts_Travis/package.sh
+      script: 
+        - chmod +x Scripts_Travis/package.sh
+        - Scripts_Travis/package.sh
   
