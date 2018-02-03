@@ -38,8 +38,9 @@ jobs:
     - stage: prepare and build
       script:
         - chmod +x Scripts_Travis/prepare.sh
-        - Scripts_Travis/prepare.sh
         - chmod +x Scripts_Travis/build.sh
+      script:
+        - Scripts_Travis/prepare.sh
         - Scripts_Travis/build.sh
     
     - stage: tests
