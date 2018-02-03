@@ -1,4 +1,7 @@
-- mkdir build
-  - mkdir headers
-  - cd build
-- cmake ..
+mkdir build
+
+mkdir headers
+
+cd build
+
+cmake ..
