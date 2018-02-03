@@ -32,11 +32,9 @@ cache:  #Sonar Cache don't usually changes
 
 before_install:
   - chmod +x Scripts_Travis/permissions.sh
+  - Script_Travis/permissions.sh
   - echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
   
-  
-before_script:
-  - Script_Travis/permissions.sh
   
 before_script:
   - Scripts_Travis/prepare.sh
