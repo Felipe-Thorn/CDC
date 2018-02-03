@@ -49,6 +49,7 @@ after_script:
  - ctest -V   #make test also works, bu ctest -V gives a better log
  - cd ../src/install/example
  - mkdir build
+ - ls
  - cd build
  - cmake ..
  - make
