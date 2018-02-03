@@ -1,11 +1,14 @@
 #SRC - Versão mínima do CMake: 3.0
 cmake_minimum_required(VERSION 3.0)
 
+#Name of the project
+project(Percptron C)
+
 #Lista de fontes para a compilação da target executable
-set(Fonte ../main.c)
+set(Source ../main.c)
 
 #Adiciona a target executável a partir dos arquivos desse subdiretório
-add_executable	(main ${Fonte})
+add_executable	(perceptron_exe ${Source})
 
 #Inclui o diretório lib, que contém as bibliotecas instaladas
 include_directories(tmp/usr/lib)
@@ -30,3 +33,19 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
 # abb is an executable, so he must be treated as a RUNTIME target
 # This rule specifies bin as the place to install abb
 install(TARGETS main RUNTIME DESTINATION bin)
+
+#In Windows, the founded .dll must be next to the  
+# executable, otherwise the executable will not be 
+# able to execute.
+if(WIN32)
+	file(COPY ${PRC_LIB} DESTINATION ${EXECUTABLE_OUTPUT_PATH})
+endif(WIN32)
+
+#The required libs of the system are included, in case of
+# needing in the target
+include (InstallRequiredSystemLibraries)
+
+install (TARGETS main RUNTIME DESTINATION ${PROJECT_BINARY_DIR}/pack)
+
+include (CPack)
+
