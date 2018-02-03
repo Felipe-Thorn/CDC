@@ -51,7 +51,7 @@ jobs:
         - cd build
         - ctest -V
     - script:
-        - cd ../src/install/example
+        - cd src/install/example
         - mkdir build
         - cd build
         - cmake ..
