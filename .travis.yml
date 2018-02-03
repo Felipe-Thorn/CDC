@@ -29,22 +29,22 @@ cache:  #Sonar Cache don't usually changes
   directories:
     - '$HOME/.sonar/cache'
 
+jobs:
+  include:
+    - stage: bef_install
+      script: chmod +x Scripts_Travis/permissions.sh
+      script: Scripts_Travis/permissions.sh
+      script: echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
+    
+    - stage: prepare
+      script: Scripts_Travis/prepare.sh
+      
+    - stage: build
+      script: Scripts_Travis/build.sh
+    
+    - stage: tests
+      script: Scripts_Travis/tests.sh
 
-before_install:
-  - chmod +x Scripts_Travis/permissions.sh
-  - Scripts_Travis/permissions.sh
-  - echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
-  
-  
-before_script:
-  - Scripts_Travis/prepare.sh
-  
-  
-script:
-  - Scripts_Travis/build.sh
-    
-    
-after_script:
-  - Scripts_Travis/tests.sh
-  - Scripts_Travis/package.sh
+    - stage: package
+      script: Scripts_Travis/package.sh
   
