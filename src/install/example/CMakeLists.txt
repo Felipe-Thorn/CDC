@@ -20,7 +20,7 @@ message(STATUS "Library path PRC_LIB is " ${PRC_LIB})
 
 #Liga a target executável com as bibliotecas que ele
 # precisa para executar.
-target_link_libraries(main ${PRC_LIB})
+target_link_libraries(perceptron_exe ${PRC_LIB})
 
 #Define o local onde o executável será armazenado
 # como ${PROJECT_BINARY_DIR}/bin
