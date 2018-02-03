@@ -40,22 +40,14 @@ before_install:
 
 jobs:
   include:
-    - stage: show certificate
+    - stage: Prepare and build
       script: 
         - echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
-        - echo one | tee > ~/shared/one
-        
-    - stage: prepare and build
-      script:
-        - cat ~/shared/*
         - chmod +x Scripts_Travis/prepare.sh
         - chmod +x Scripts_Travis/build.sh
-        - echo two | tee > ~/shared/two
-      script:
-        - cat ~/shared/*
         - Scripts_Travis/prepare.sh
         - Scripts_Travis/build.sh
-        - echo three | tee > ~/shared/three
+  
     
     - stage: tests
       script: 
