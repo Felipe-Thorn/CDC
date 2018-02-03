@@ -47,10 +47,10 @@ script:
 
 jobs:
   include:
-    - script:
+    - after_script:
         - cd build
         - ctest -V
-    - script:
+    - after_script:
         - cd src/install/example
         - mkdir build
         - cd build
