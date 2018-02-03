@@ -41,14 +41,14 @@ addons: #Code Analysis Tools
 jobs:
   include:
     - stage: prepare
-        before_script:
+        - script:
             - mkdir build
             - mkdir headers
             - cd build
             - cmake ..
             
     - stage: sonar
-         script:
+         - script:
             - make
             - sudo make install
             - build-wrapper-linux-x86-64 --out-dir bw-output make   #The output is written in build
@@ -56,12 +56,12 @@ jobs:
             - sonar-scanner   #sonar-project.properties must access the correct output path
             
     - stage: test
-         after_script:
+         - script:
             - cd build
             - ctest -V
             
     - stage: package
-         after_script:
+         - script:
             - cd src/install/example
             - mkdir build
             - cd build
