@@ -44,10 +44,10 @@ install(CODE "message(STATUS \"CONFIGURING LIBS\")" )
 #was not informed, so, by the use of the standard path prefix,
 #it will be something like /tmp/usr/lib
 install(TARGETS perceptron_dynamic perceptron_static
-        LIBRARY DESTINATION ${CMAKE_INSTALL_PREFIX}/lib
-        ARCHIVE DESTINATION ${CMAKE_INSTALL_PREFIX}/lib)
+        LIBRARY DESTINATION ${PROJECT_SOURCE_DIR}/lib
+        ARCHIVE DESTINATION ${PROJECT_SOURCE_DIR}/lib)
         
 #Rules to run at install time:
 #abb.h is a file and it's installed in ${PROJECT_SOURCE_DIR}/src/install/docs
 #which means a folder in src/install subdir, called docs
-install(FILES perceptron.h DESTINATION ${CMAKE_INSTALL_PREFIX}/lib)
+install(FILES perceptron.h DESTINATION ${PROJECT_SOURCE_DIR}/lib)
