@@ -47,14 +47,16 @@ script:
 
 jobs:
   include:
-    - after_script:
-        - cd build
-        - ctest -V
-    - after_script:
-        - cd src/install/example
-        - mkdir build
-        - cd build
-        - cmake ..
-        - make
-        - sudo make install
-        - sudo make package
+    - stage: Testes
+        - after_script:
+            - cd build
+            - ctest -V
+    - stage: Package
+        - after_script:
+            - cd src/install/example
+            - mkdir build
+            - cd build
+            - cmake ..
+            - make
+            - sudo make install
+            - sudo make package
