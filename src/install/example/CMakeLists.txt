@@ -29,7 +29,7 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
 #Rules to run at install time:
 # abb is an executable, so he must be treated as a RUNTIME target
 # This rule specifies bin as the place to install abb
-install(TARGETS main RUNTIME DESTINATION bin)
+install(TARGETS perceptron_exe RUNTIME DESTINATION bin)
 
 #In Windows, the founded .dll must be next to the  
 # executable, otherwise the executable will not be 
@@ -42,7 +42,7 @@ endif(WIN32)
 # needing in the target
 include (InstallRequiredSystemLibraries)
 
-install (TARGETS main RUNTIME DESTINATION ${PROJECT_BINARY_DIR}/pack)
+install (TARGETS perceptron_exe RUNTIME DESTINATION ${PROJECT_BINARY_DIR}/pack)
 
 include (CPack)
 
