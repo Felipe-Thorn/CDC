@@ -11,7 +11,9 @@ env:
 
 before_install:
      - echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
-
+     - chmod +x Scripts_Travis/prepare.sh
+     - chmod +x Scripts_Travis/build.sh
+     
 cache:  #Sonar Cache don't usually changes
   directories:
     - '$HOME/.sonar/cache'
@@ -32,15 +34,10 @@ addons: #Code Analysis Tools
     token: $SONAR_TOKEN                 #Environment variable defined in settings Token to SonarCloud
   
 before_script:
-  - chmod +x Scripts_Travis/prepare.sh
   - Scripts_Travis/prepare.sh
   
 script:
-  - make
-  - sudo make install
-  - build-wrapper-linux-x86-64 --out-dir bw-output make   #The output is written in build
-  - cd ..
-  - sonar-scanner   #sonar-project.properties must access the correct output path
+  - Scripts_Travis/build.sh
     
 after_script:
  - cd build   #the tests are in the build directory
