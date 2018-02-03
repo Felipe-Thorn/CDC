@@ -47,8 +47,10 @@ script:
 after_script:
  - cd build   #the tests are in the build directory
  - ctest -V   #make test also works, bu ctest -V gives a better log
- - cd src/install/example/build
- - cmake ..
- - make
- - sudo make install
- - sudo make package
+ - ls
+ - cd src
+# - cd src/install/example/build
+# - cmake ..
+# - make
+# - sudo make install
+# - sudo make package
