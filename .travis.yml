@@ -43,11 +43,11 @@ script:
     
 after_script:
   - Scripts_Travis/tests.sh
- - cd ../src/install/example
- - mkdir build
- - ls
- - cd build
- - cmake ..
- - make
- - sudo make install
- - sudo make package
+  - cd ../src/install/example
+  - mkdir build
+  - ls
+  - cd build
+  - cmake ..
+  - make
+  - sudo make install
+  - sudo make package
