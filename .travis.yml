@@ -48,11 +48,11 @@ script:
 jobs:
   include:
     - stage: Testes
-        - after_script:
+          after_script:
             - cd build
             - ctest -V
     - stage: Package
-        - after_script:
+          after_script:
             - cd src/install/example
             - mkdir build
             - cd build
