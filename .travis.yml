@@ -60,3 +60,8 @@ jobs:
             - sudo make install
             - sudo make package
 
+stage:
+  - prepare
+  - sonar
+  - test
+  - package
