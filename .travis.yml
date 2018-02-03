@@ -2,7 +2,13 @@ language: C
 
 compiler:
   - gcc
- 
+
+stages:
+  - prepare
+  - build
+  - test
+  - pack
+
 env:
   global:
    # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
@@ -11,11 +17,12 @@ env:
 
 before_install:
      - echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
-
+     - stage: prepare
+     
 cache:  #Sonar Cache don't usually changes
   directories:
     - '$HOME/.sonar/cache'
-
+    
 addons: #Code Analysis Tools
   coverity_scan:
     project:
@@ -36,6 +43,7 @@ before_script:
   - mkdir headers
   - cd build
   - cmake ..
+  #- stage: prepare
   
 script:
   - make
