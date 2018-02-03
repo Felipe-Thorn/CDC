@@ -2,12 +2,19 @@ language: C
 
 compiler:
   - gcc
-
+ 
 env:
   global:
    # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
    #   via the "travis encrypt" command using the project repo's public key
    - secure: "NPuvxSfw04FPenPhMoMpkT7JMiAhwCHFz6BrPcHQpilGAZBH/FUOBuKDiVMlITnqAM3weQGTr47QAp2VbZgFgoHqTxgFH5wLYxWDGSctn7yo2cO5yo8evjsB4j6Sbgz8yeT1xlZwBJOysojjJNJ/1Mr0AESKgzVVyint5T0u7lNpHiHqVBoK7hqlPZwg3dZPPc0ML5jd6lCU5Fq7G6+T3dCgqZMhssKW4ja9+/VY8aA9V456c7BMsFE9ML/Lcu0guLTnS9iJ5qw+O3B+kXsTJN+wA4kUcMiuIYvqinzL0BXpPNV7qE0xz3g/4YOkRkotqzAjH5eVw3WDveDfmvEK9Uq4HQDbbcxqboW3HUwER51rxOt8Yit4lZR/xrX78m4GJIGl92ykWFg8ubVJvKC+9tsc23xX4XE7VjcgsSv9TAAfXwIfG2fMy/icDnJVll93c6a268pnDYZRO00uCgE5QcfpSZTcpkCLr19Hn6mriOZeEy52jqwnE05WHa2Ai3v66AwN5oK2UIPDd9Ydah0mxdsTefisjWgAUVDgg8Qkpw6XS4Mg8o4ymyazDMmhm75BzQemWRGzC8l6bzfL+mKIGg0WWfGrvd9Okh0Urrcw+7KeNIamovt8bcO75J5Yrrw1/51F38+lfJ5nW8Zd710UC9ngHd4d+k7emUTd0GWJrXI="
+
+before_install:
+     - echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
+
+cache:  #Sonar Cache don't usually changes
+  directories:
+    - '$HOME/.sonar/cache'
 
 addons: #Code Analysis Tools
   coverity_scan:
@@ -23,46 +30,31 @@ addons: #Code Analysis Tools
   sonarcloud:
     organization: "felipe-thorn-github" #Name of the organization. Can be found in https://sonarcloud.io/account/organizations
     token: $SONAR_TOKEN                 #Environment variable defined in settings Token to SonarCloud
+  
+before_script:
+  - mkdir build
+  - mkdir headers
+  - cd build
+  - cmake ..
+  
+script:
+  - make
+  - sudo make install
+  - build-wrapper-linux-x86-64 --out-dir bw-output make   #The output is written in build
+  - cd ..
+  - sonar-scanner   #sonar-project.properties must access the correct output path
 
 
 jobs:
   include:
-    - stage: cache
-        script:
-            - cache:  #Sonar Cache don't usually changes
-                directories:
-                  - '$HOME/.sonar/cache'
-  
-    - stage: pre_install
-        script:
-            - echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
-
-    - stage: build
-        script:
-            - mkdir build
-            - mkdir headers
-            - cd build
-            - cmake ..
-            
-    - stage: sonar
-         script:
-            - make
-            - sudo make install
-            - build-wrapper-linux-x86-64 --out-dir bw-output make   #The output is written in build
-            - cd ..
-            - sonar-scanner   #sonar-project.properties must access the correct output path
-            
-    - stage: test
-         script:
-            - cd build
-            - ctest -V
-            
-    - stage: package
-         script:
-            - cd src/install/example
-            - mkdir build
-            - cd build
-            - cmake ..
-            - make
-            - sudo make install
-            - sudo make package
+    - after_script:
+        - cd build
+        - ctest -V
+    - after_script:
+        - cd src/install/example
+        - mkdir build
+        - cd build
+        - cmake ..
+        - make
+        - sudo make install
+        - sudo make package
