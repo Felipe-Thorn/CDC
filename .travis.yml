@@ -25,9 +25,11 @@ addons: #Code Analysis Tools
     token: $SONAR_TOKEN                 #Environment variable defined in settings Token to SonarCloud
 
 
-cache:  #Sonar Cache don't usually changes
-  directories:
-    - '$HOME/.sonar/cache'
+#cache:  #Sonar Cache don't usually changes
+ # directories:
+  #  - '$HOME/.sonar/cache'
+
+cache: ccache
 
 jobs:
   include:
