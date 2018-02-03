@@ -32,10 +32,7 @@ addons: #Code Analysis Tools
     token: $SONAR_TOKEN                 #Environment variable defined in settings Token to SonarCloud
   
 before_script:
-  - mkdir build
-  - mkdir headers
-  - cd build
-  - cmake ..
+  - /Scripts_Travis/prepare.sh
   
 script:
   - make
