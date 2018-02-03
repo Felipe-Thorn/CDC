@@ -32,6 +32,7 @@ addons: #Code Analysis Tools
     token: $SONAR_TOKEN                 #Environment variable defined in settings Token to SonarCloud
   
 before_script:
+  - ls
   - /Scripts_Travis/prepare.sh
   
 script:
