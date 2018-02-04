@@ -33,6 +33,7 @@ jobs:
           - '$HOME/lib/cache'
       script: 
         - echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
+        - chmod +w $HOME/lib/cache/
         - chmod +x Scripts_Travis/prepare.sh
         - chmod +x Scripts_Travis/build.sh
         - chmod +x Scripts_Travis/tests.sh
