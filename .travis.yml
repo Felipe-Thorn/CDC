@@ -26,8 +26,8 @@ addons: #Code Analysis Tools
 
 cache:
   directories:
-    - '$HOME/.sonar/cache'
-    - '$HOME/lib/cache'
+    - '/$HOME/.sonar/cache'
+    - '/$HOME/lib/cache'
     
 jobs:
   include:
@@ -40,13 +40,13 @@ jobs:
         - Scripts_Travis/prepare.sh
         - Scripts_Travis/build.sh
         - Scripts_Travis/tests.sh
-        - cp -a $HOME/build/Felipe-Thorn/CDC/lib/ $HOME/lib/cache/
+        - cp -a /$HOME/build/Felipe-Thorn/CDC/lib/ /$HOME/lib/cache/
         
     - stage: package
       cache: false
       script:
-        - (cd $HOME/lib/cache && ls)
-        - cp -a $HOME/lib/cache $HOME/build/Felipe-Thorn/CDC/lib/
+        - (cd /$HOME/lib/cache && ls)
+        - cp -a /$HOME/lib/cache /$HOME/build/Felipe-Thorn/CDC/lib/
         - chmod +x Scripts_Travis/package.sh
         - Scripts_Travis/package.sh
         
