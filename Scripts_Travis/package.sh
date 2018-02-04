@@ -1,5 +1,5 @@
 pwd
-(cd src/install/lib && ls)
+(cd lib && ls)
 cd src/install/example
 mkdir build
 ls
