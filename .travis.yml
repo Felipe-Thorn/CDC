@@ -27,7 +27,7 @@ addons: #Code Analysis Tools
 cache:
   directories:
     - '$HOME/.sonar/cache'
-    - '/tmp/usr/lib'
+    - '$HOME/travis/build/Felipe-Thorn/CDC/src/install/lib'
     
 jobs:
   include:
