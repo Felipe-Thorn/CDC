@@ -1,3 +1,4 @@
+(cd ../tmp)
 cd src/install/example
 mkdir build
 ls
