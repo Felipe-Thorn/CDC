@@ -29,7 +29,7 @@ before_cache:
 
 cache:
   directories:
-    - '/$HOME/.sonar/cache'
+    - '$HOME/.sonar/cache'
     - '$HOME/lib/cache'
     
 jobs:
@@ -47,8 +47,8 @@ jobs:
         
     - stage: package
       script:
-        - (cd $HOME/travis/lib/cache && ls)
-        - cp -a $HOME/lib/cache $HOME/build/Felipe-Thorn/CDC/lib/
+        - (cd $HOME/lib/cache/ && ls)
+        - cp -a $HOME/lib/cache/ $HOME/build/Felipe-Thorn/CDC/lib/
         - chmod +x Scripts_Travis/package.sh
         - Scripts_Travis/package.sh
         
