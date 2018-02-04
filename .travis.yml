@@ -41,7 +41,6 @@ jobs:
         - cp -a $HOME/build/Felipe-Thorn/CDC/lib/ $HOME/.ccache/
         - (cd $HOME/build/Felipe-Thorn/CDC/lib/ && ls)
         - (cd $HOME/.ccache && ls)
-        - (cd $HOME/.ccache/ && ls)
  
         
     - stage: package
@@ -49,8 +48,7 @@ jobs:
         - sleep 30
       script:
         - (cd $HOME/.ccache && ls)
-        - (cd $HOME/.ccache/ && ls)
-        - cp -a $HOME/.ccache/ $HOME/build/Felipe-Thorn/CDC/lib/
+        - cp -a $HOME/.ccache/lib/ $HOME/build/Felipe-Thorn/CDC/lib/
         - chmod +x Scripts_Travis/package.sh
         - Scripts_Travis/package.sh
         
