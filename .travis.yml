@@ -43,6 +43,7 @@ jobs:
         - cp -a $HOME/build/Felipe-Thorn/CDC/lib/ $HOME/lib/cache/
         
     - stage: package
+      cache: false
       script:
         - (cd $HOME/lib/cache && ls)
         - cp -a $HOME/lib/cache $HOME/build/Felipe-Thorn/CDC/lib/
