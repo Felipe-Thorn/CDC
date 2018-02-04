@@ -1,4 +1,5 @@
 pwd
+cp -a $HOME/lib/cache $HOME/build/Felipe-Thorn/CDC/lib/
 (cd lib && ls)
 cd src/install/example
 mkdir build
