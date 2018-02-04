@@ -40,11 +40,10 @@ jobs:
         - Scripts_Travis/build.sh
         - Scripts_Travis/tests.sh
         - cp -a $HOME/build/Felipe-Thorn/CDC/lib/ $HOME/lib/cache/
+     after_success:
+        - sleep 30
         
     - stage: package
-      before_cache:
-        - sleep 30
-      cache: true
       script:
         - (cd $HOME/lib/cache/ && ls)
         - cp -a $HOME/lib/cache/ $HOME/build/Felipe-Thorn/CDC/lib/
