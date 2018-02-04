@@ -47,4 +47,5 @@ jobs:
         - Scripts_Travis/prepare.sh
         - Scripts_Travis/build.sh
         - Scripts_Travis/package.sh
+        - ls
         
