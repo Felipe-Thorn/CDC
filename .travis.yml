@@ -45,6 +45,7 @@ jobs:
     - stage: package
       script:
         - (cd $HOME/lib/cache && ls)
+        - cp -a $HOME/lib/cache $HOME/build/Felipe-Thorn/CDC/lib/
         - chmod +x Scripts_Travis/package.sh
         - Scripts_Travis/package.sh
         
