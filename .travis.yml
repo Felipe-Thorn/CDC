@@ -27,13 +27,12 @@ addons: #Code Analysis Tools
 cache:
   directories:
     - '$HOME/.sonar/cache'
-    - '$HOME/travis/build/Felipe-Thorn/CDC/'
+    - '$HOME/lib/cache'
     
 jobs:
   include:
     - stage: Prepare and build
       script: 
-        - (cd $HOME/build/Felipe-Thorn/CDC && ls)
         - echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
         - chmod +x Scripts_Travis/prepare.sh
         - chmod +x Scripts_Travis/build.sh
@@ -41,9 +40,11 @@ jobs:
         - Scripts_Travis/prepare.sh
         - Scripts_Travis/build.sh
         - Scripts_Travis/tests.sh
+        - copy -a $HOME/build/Felipe-Thorn/CDC/lib/ $HOME/lib/cache/
         
     - stage: package
       script:
+        - (cd $HOME/lib/cache && ls)
         - chmod +x Scripts_Travis/package.sh
         - Scripts_Travis/package.sh
         
