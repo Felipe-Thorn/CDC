@@ -24,6 +24,9 @@ addons: #Code Analysis Tools
     organization: "felipe-thorn-github" #Name of the organization. Can be found in https://sonarcloud.io/account/organizations
     token: $SONAR_TOKEN                 #Environment variable defined in settings Token to SonarCloud
 
+before_cache:
+  - sleep 30
+
 cache:
   directories:
     #- '/$HOME/.sonar/cache'
@@ -41,7 +44,6 @@ jobs:
         - Scripts_Travis/build.sh
         - Scripts_Travis/tests.sh
         - cp -a /$HOME/build/Felipe-Thorn/CDC/lib/ /$HOME/lib/cache/
-        - skip_cleanup: true
         
     - stage: package
       script:
