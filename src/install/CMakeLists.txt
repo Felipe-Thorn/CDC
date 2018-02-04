@@ -8,9 +8,6 @@ cmake_minimum_required(VERSION 3.5)
 #exists, it shall be created.
 INSTALL(FILES README.md DESTINATION ${PROJECT_SOURCE_DIR}/src/install/docs)
 
-#Sets a install prefix
-SET(CMAKE_INSTALL_PREFIX "/tmp/usr")
-
 #List of source files
 set(Source main.c perceptron.c)
 
@@ -44,10 +41,10 @@ install(CODE "message(STATUS \"CONFIGURING LIBS\")" )
 #was not informed, so, by the use of the standard path prefix,
 #it will be something like /tmp/usr/lib
 install(TARGETS perceptron_dynamic perceptron_static
-        LIBRARY DESTINATION ${PROJECT_SOURCE_DIR}/src/install/lib
-        ARCHIVE DESTINATION ${PROJECT_SOURCE_DIR}/src/install/lib)
+        LIBRARY DESTINATION ${PROJECT_SOURCE_DIR}/lib
+        ARCHIVE DESTINATION ${PROJECT_SOURCE_DIR}/lib)
         
 #Rules to run at install time:
 #abb.h is a file and it's installed in ${PROJECT_SOURCE_DIR}/src/install/docs
 #which means a folder in src/install subdir, called docs
-install(FILES perceptron.h DESTINATION ${PROJECT_SOURCE_DIR}/src/install/lib)
+install(FILES perceptron.h DESTINATION ${PROJECT_SOURCE_DIR}/lib)
