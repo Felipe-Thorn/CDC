@@ -50,7 +50,8 @@ jobs:
       before_cache:
         - sleep 30
       cache:
-        - '$HOME/lib/cache' 
+        directories:
+          - '$HOME/lib/cache' 
       script:
         - (cd $HOME/lib/cache && ls)
         - cp -a $HOME/lib/cache/ $HOME/build/Felipe-Thorn/CDC/lib/
