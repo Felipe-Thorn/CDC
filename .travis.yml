@@ -26,6 +26,7 @@ addons: #Code Analysis Tools
     
 cache:
   directories:
+    - .autoconf
     - '$HOME/.sonar/cache'
     - '$HOME/lib/cache'  
   
