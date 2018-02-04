@@ -25,7 +25,9 @@ addons: #Code Analysis Tools
     token: $SONAR_TOKEN                 #Environment variable defined in settings Token to SonarCloud
      
   
-cache: ccache  
+cache:
+  directories:
+    - $HOME/cache/
     
 jobs:
   include:
@@ -38,17 +40,15 @@ jobs:
         - Scripts_Travis/prepare.sh
         - Scripts_Travis/build.sh
         - Scripts_Travis/tests.sh
-        - cp -a $HOME/build/Felipe-Thorn/CDC/lib/ $HOME/.ccache/f
+        - cp -a $HOME/build/Felipe-Thorn/CDC/lib/ $HOME/cache/
         - (cd $HOME/build/Felipe-Thorn/CDC/lib/ && ls)
-        - (cd $HOME/.ccache/f && ls)
+        - (cd $HOME/cache/ && ls)
  
         
     - stage: package
-      before_cache:
-        - sleep 30
       script:
-        - (cd $HOME/.ccache/f && ls)
-        - cp -a $HOME/.ccache/lib/f $HOME/build/Felipe-Thorn/CDC/lib/
+        - (cd $HOME/cache/ && ls)
+        - cp -a $HOME/cache/ $HOME/build/Felipe-Thorn/CDC/lib/
         - chmod +x Scripts_Travis/package.sh
         - Scripts_Travis/package.sh
         
