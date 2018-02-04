@@ -7,6 +7,9 @@ project(Perceptron C)
 #Lista de fontes para a compilação da target executable
 set(Source ../main.c)
 
+#Sets a install prefix
+SET(CMAKE_INSTALL_PREFIX "/tmp/usr")
+
 #Adiciona a target executável a partir dos arquivos desse subdiretório
 add_executable	(perceptron_exe ${Source})
 
