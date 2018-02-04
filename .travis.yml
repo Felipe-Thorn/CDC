@@ -38,17 +38,17 @@ jobs:
         - Scripts_Travis/prepare.sh
         - Scripts_Travis/build.sh
         - Scripts_Travis/tests.sh
-        - cp -a $HOME/build/Felipe-Thorn/CDC/lib/ $HOME/.ccache/
+        - cp -a $HOME/build/Felipe-Thorn/CDC/lib/ $HOME/.ccache/f
         - (cd $HOME/build/Felipe-Thorn/CDC/lib/ && ls)
-        - (cd $HOME/.ccache && ls)
+        - (cd $HOME/.ccache/f && ls)
  
         
     - stage: package
       before_cache:
         - sleep 30
       script:
-        - (cd $HOME/.ccache && ls)
-        - cp -a $HOME/.ccache/lib/ $HOME/build/Felipe-Thorn/CDC/lib/
+        - (cd $HOME/.ccache/f && ls)
+        - cp -a $HOME/.ccache/lib/f $HOME/build/Felipe-Thorn/CDC/lib/
         - chmod +x Scripts_Travis/package.sh
         - Scripts_Travis/package.sh
         
