@@ -23,18 +23,14 @@ addons: #Code Analysis Tools
   sonarcloud:
     organization: "felipe-thorn-github" #Name of the organization. Can be found in https://sonarcloud.io/account/organizations
     token: $SONAR_TOKEN                 #Environment variable defined in settings Token to SonarCloud
-
-before_cache:
-  - sleep 30
-
-cache:
-  directories:
-    - '$HOME/.sonar/cache'
-    - '$HOME/lib/cache'
     
 jobs:
   include:
     - stage: Prepare and build
+      cache:
+        directories:
+          - '$HOME/.sonar/cache'
+          - '$HOME/lib/cache'
       script: 
         - echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
         - chmod +x Scripts_Travis/prepare.sh
@@ -46,6 +42,9 @@ jobs:
         - cp -a $HOME/build/Felipe-Thorn/CDC/lib/ $HOME/lib/cache/
         
     - stage: package
+      before_cache:
+        - sleep 30
+      cache: true
       script:
         - (cd $HOME/lib/cache/ && ls)
         - cp -a $HOME/lib/cache/ $HOME/build/Felipe-Thorn/CDC/lib/
