@@ -7,16 +7,13 @@ project(Perceptron C)
 #Lista de fontes para a compilação da target executable
 set(Source ../main.c)
 
-#Sets a install prefix
-SET(CMAKE_INSTALL_PREFIX "/tmp/usr")
-
 #Adiciona a target executável a partir dos arquivos desse subdiretório
 add_executable	(perceptron_exe ${Source})
 
 #Procura bibliotecas com o nome abb no diretório lib,
 # previamente abastecido por install (targets ...),
 # e armazenas as bibliotecas encontradas em ABB_LIB.
-find_library(PRC_LIB NAMES perceptron PATHS "${PROJECT_SOURCE_DIR}/../lib")
+find_library(PRC_LIB NAMES perceptron PATHS "${PROJECT_SOURCE_DIR}/../../../lib")
 
 #Mostra o caminho da biblioteca.
 message(STATUS "Library path PRC_LIB is " ${PRC_LIB})
