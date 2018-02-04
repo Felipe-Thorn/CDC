@@ -26,7 +26,7 @@ addons: #Code Analysis Tools
 
 cache:
   directories:
-    - '/$HOME/.sonar/cache'
+    #- '/$HOME/.sonar/cache'
     - '/$HOME/lib/cache'
     
 jobs:
