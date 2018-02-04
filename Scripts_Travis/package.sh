@@ -1,4 +1,4 @@
-(cd ../tmp)
+(../tmp/usr/lib)
 cd src/install/example
 mkdir build
 ls
