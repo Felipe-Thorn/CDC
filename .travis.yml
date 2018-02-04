@@ -44,8 +44,10 @@ jobs:
         - chmod +x Scripts_Travis/prepare.sh
         - chmod +x Scripts_Travis/build.sh
         - chmod +x Scripts_Travis/package.sh
+        - (cd $HOME/build/Felipe-Thorn/CDC/lib/ && ls)
         - Scripts_Travis/prepare.sh
+        - (cd $HOME/build/Felipe-Thorn/CDC/lib/ && ls)
         - Scripts_Travis/build.sh
+        - (cd $HOME/build/Felipe-Thorn/CDC/lib/ && ls)
         - Scripts_Travis/package.sh
-        - ls
         
