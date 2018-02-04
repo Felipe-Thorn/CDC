@@ -43,10 +43,6 @@ jobs:
         
     - stage: package
       script:
-        - chmod +x Scripts_Travis/prepare.sh
-        - chmod +x Scripts_Travis/build.sh
         - chmod +x Scripts_Travis/package.sh
-        - Scripts_Travis/prepare.sh
-        - Scripts_Travis/build.sh
         - Scripts_Travis/package.sh
         
