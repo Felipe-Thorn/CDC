@@ -24,9 +24,6 @@ addons: #Code Analysis Tools
     organization: "felipe-thorn-github" #Name of the organization. Can be found in https://sonarcloud.io/account/organizations
     token: $SONAR_TOKEN                 #Environment variable defined in settings Token to SonarCloud
      
-  
-cache: ccache
-
 jobs:
   include:
     - stage: Prepare and build   
