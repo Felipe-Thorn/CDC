@@ -32,7 +32,7 @@ before_script:
   
 jobs:
   include:
-    - stage: Prepare and build   
+    - stage: tests  
       script: 
         - echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
         - chmod +x Scripts_Travis/tests.sh
@@ -40,13 +40,7 @@ jobs:
         
     - stage: package
       script:
-        - chmod +x Scripts_Travis/prepare.sh
-        - chmod +x Scripts_Travis/build.sh
+        - (cd $HOME/build/Felipe-Thorn/CDC/lib/ && ls)
         - chmod +x Scripts_Travis/package.sh
-        - (cd $HOME/build/Felipe-Thorn/CDC/lib/ && ls)
-        - Scripts_Travis/prepare.sh
-        - (cd $HOME/build/Felipe-Thorn/CDC/lib/ && ls)
-        - Scripts_Travis/build.sh
-        - (cd $HOME/build/Felipe-Thorn/CDC/lib/ && ls)
         - Scripts_Travis/package.sh
         
