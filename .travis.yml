@@ -33,6 +33,7 @@ after_script:
     - ls -al $HOME/.ccache
     - ls -al $HOME/lib/cache
     - ls -al $HOME/.sonar/cache
+    - ls -al $HOME/cache
     
 jobs:
   include:
