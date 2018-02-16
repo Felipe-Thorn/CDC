@@ -29,6 +29,11 @@ cache:
   directories:
     - $HOME/cache/
     
+after_script:
+    - ls -al $HOME/.ccache
+    - ls -al $HOME/lib/cache
+    - ls -al $HOME/.sonar/cache
+    
 jobs:
   include:
     - stage: Prepare and build   
@@ -43,18 +48,10 @@ jobs:
         - cp -a $HOME/build/Felipe-Thorn/CDC/lib/ $HOME/cache/
         - (cd $HOME/build/Felipe-Thorn/CDC/lib/ && ls)
         - (cd $HOME/cache/ && ls)
-      after_script:
-        - ls -al $HOME/.ccache
-        - ls -al $HOME/lib/cache
-        - ls -al $HOME/.sonar/cache
-        
+       
     - stage: package
       script:
         - (cd $HOME/cache/ && ls)
         - cp -a $HOME/cache/ $HOME/build/Felipe-Thorn/CDC/lib/
         - chmod +x Scripts_Travis/package.sh
         - Scripts_Travis/package.sh
-       after_script:
-        - ls -al $HOME/.ccache
-        - ls -al $HOME/lib/cache
-        - ls -al $HOME/.sonar/cache
