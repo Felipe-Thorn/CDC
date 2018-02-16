@@ -25,14 +25,13 @@ addons: #Code Analysis Tools
     token: $SONAR_TOKEN                 #Environment variable defined in settings Token to SonarCloud
      
   
+cache:
+  directories:
+    - $HOME/cache/
+    
 jobs:
   include:
-    - stage: Prepare and build     
-      cache:
-        directories:
-          - .autoconf
-          - '$HOME/.sonar/cache'
-          - '$HOME/lib/cache' 
+    - stage: Prepare and build   
       script: 
         - echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
         - chmod +x Scripts_Travis/prepare.sh
@@ -41,26 +40,21 @@ jobs:
         - Scripts_Travis/prepare.sh
         - Scripts_Travis/build.sh
         - Scripts_Travis/tests.sh
-        - cp -a $HOME/build/Felipe-Thorn/CDC/lib/ $HOME/lib/cache/
+        - cp -a $HOME/build/Felipe-Thorn/CDC/lib/ $HOME/cache/
         - (cd $HOME/build/Felipe-Thorn/CDC/lib/ && ls)
-        - (cd $HOME/lib/cache/ && ls)
-     after_script:
+        - (cd $HOME/cache/ && ls)
+      after_script:
         - ls -al $HOME/.ccache
         - ls -al $HOME/lib/cache
         - ls -al $HOME/.sonar/cache
-
         
     - stage: package
-      before_cache:
-        - sleep 30
-      cache:
-        - '$HOME/lib/cache' 
       script:
-        - (cd $HOME/lib/cache/ && ls)
-        - cp -a $HOME/lib/cache/ $HOME/build/Felipe-Thorn/CDC/lib/
+        - (cd $HOME/cache/ && ls)
+        - cp -a $HOME/cache/ $HOME/build/Felipe-Thorn/CDC/lib/
         - chmod +x Scripts_Travis/package.sh
         - Scripts_Travis/package.sh
-     after_script:
+       after_script:
         - ls -al $HOME/.ccache
         - ls -al $HOME/lib/cache
         - ls -al $HOME/.sonar/cache
