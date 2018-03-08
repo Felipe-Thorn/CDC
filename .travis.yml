@@ -1,5 +1,7 @@
 language: C
 
+sudo: required
+
 compiler:
   - gcc
  
@@ -23,35 +25,26 @@ addons: #Code Analysis Tools
   sonarcloud:
     organization: "felipe-thorn-github" #Name of the organization. Can be found in https://sonarcloud.io/account/organizations
     token: $SONAR_TOKEN                 #Environment variable defined in settings Token to SonarCloud
-     
+
+cache: ccache
+
+before_script:
+  - chmod +x Scripts_Travis/prepare.sh
+  - chmod +x Scripts_Travis/build.sh
+  - Scripts_Travis/prepare.sh
+  - Scripts_Travis/build.sh
   
-cache:
-  directories:
-    - $HOME/cache/
-    
-after_script:
-    - ls -al $HOME/.ccache
-    - ls -al $HOME/.sonar/cache
-    - ls -al $HOME/cache/lib
-    
 jobs:
   include:
-    - stage: Prepare and build   
+    - stage: tests  
       script: 
         - echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
-        - chmod +x Scripts_Travis/prepare.sh
-        - chmod +x Scripts_Travis/build.sh
         - chmod +x Scripts_Travis/tests.sh
-        - Scripts_Travis/prepare.sh
-        - Scripts_Travis/build.sh
-        - Scripts_Travis/tests.sh
-        - cp -a $HOME/build/Felipe-Thorn/CDC/lib/ $HOME/cache/
-        - (cd $HOME/build/Felipe-Thorn/CDC/lib/ && ls)
-        - (cd $HOME/cache/ && ls)
-       
+        - Scripts_Travis/tests.sh 
+        
     - stage: package
       script:
-        - (cd $HOME/cache/ && ls)
-        - cp -a $HOME/cache/ $HOME/build/Felipe-Thorn/CDC/lib/
+        - (cd $HOME/build/Felipe-Thorn/CDC/lib/ && ls)
         - chmod +x Scripts_Travis/package.sh
         - Scripts_Travis/package.sh
+        
