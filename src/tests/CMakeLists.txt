@@ -6,7 +6,7 @@ cmake_minimum_required(VERSION 3.5)
 add_executable(test_target main.c cmockatest.c)
 
 #inclui o arquivo CodeCoverage.cmake
-include(CodeCoverage)
+include(../../CodeCoverage)
 
 APPEND_COVERAGE_COMPILER_FLAGS() 
 
