@@ -5,6 +5,9 @@ cmake_minimum_required(VERSION 3.5)
 #Name of the project
 project(LibsCMake C)
 
+#inclui o arquivo CodeCoverage.cmake
+include(CodeCoverage)
+
 #Verifies the host system and displays the result
 if(WIN32)
 	message(STATUS "This is a Windows system")
@@ -25,11 +28,11 @@ enable_testing()
 
 #Adds config subdirectory, that must have his own CMakeLists file
 #His CMakeLists file will be executed...
-add_subdirectory(src/config)
+#add_subdirectory(src/config)
 
 #Adds src subdirectory, that must have his own CMakeLists file
 #His CMakeLists file will be executed...
-add_subdirectory(src/sources)
+#add_subdirectory(src/sources)
 
 #Adds tests subdirectory, that must have his own CMakeLists file
 #His CMakeLists file will be executed...
@@ -37,7 +40,7 @@ add_subdirectory(src/tests)
 
 #Adds install+examples subdirectory, that must have his own CMakeLists file
 #His CMakeLists file will be executed...
-add_subdirectory(src/install)
+#add_subdirectory(src/install)
 
 #...and then the execution comes back here
 message(STATUS "CMakeLists in top-level dir")

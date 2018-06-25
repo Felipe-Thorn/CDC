@@ -5,9 +5,6 @@ cmake_minimum_required(VERSION 3.5)
 #Adds a executable compiled with a test
 add_executable(test_target main.c cmockatest.c)
 
-#inclui o arquivo CodeCoverage.cmake
-include(CodeCoverage)
-
 APPEND_COVERAGE_COMPILER_FLAGS() 
 
 #informa que flags devem ser passadas ao compilador
