@@ -1,8 +1,3 @@
-Skip to content
- 
-Search or jump to…
-
-Pull requests
 # USAGE:
 #
 # 1. Copy this file into your cmake modules path.
