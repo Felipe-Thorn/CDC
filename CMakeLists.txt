@@ -6,7 +6,7 @@ cmake_minimum_required(VERSION 3.5)
 project(LibsCMake C)
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/modules")
-#set(${CMAKE_MODULE_PATH} ${PROJECT_SOURCE_DIR}/modules)
+#set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/modules)
 
 #inclui o arquivo CodeCoverage.cmake
 include(CodeCoverage)
