@@ -28,7 +28,7 @@ target_link_libraries(test_target ${CMK_LIB})
 add_test(Test_Target ${PROJECT_BINARY_DIR}/bin/test_target)
 
 #Informa qual a target que deve ser cobertaS
-SETUP_TARGET_FOR_COVERAGE(${PROJECT_NAME}_coverage ${TEST_TARGET} coverage)
+SETUP_TARGET_FOR_COVERAGE(NAME ${PROJECT_NAME}_coverage EXECUTABLE ${PROJECT_BINARY_DIR}/bin/test_target "coverage")
 
 #informa que flags devem ser passadas ao compilador
 SET(CMAKE_C_FLAGS "-g -O0 -fprofile-arcs -ftest-coverage")
