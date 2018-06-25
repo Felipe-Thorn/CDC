@@ -5,6 +5,9 @@ cmake_minimum_required(VERSION 3.5)
 #Name of the project
 project(LibsCMake C)
 
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/modules")
+#set(${CMAKE_MODULE_PATH} ${PROJECT_SOURCE_DIR}/modules)
+
 #inclui o arquivo CodeCoverage.cmake
 include(CodeCoverage)
 
@@ -18,8 +21,6 @@ endif()
 #Shows BIN and SRC directorys
 message(STATUS "BINARY dir: " ${PROJECT_BINARY_DIR})
 message(STATUS "SOURCE dir: " ${PROJECT_SOURCE_DIR})
-
-set(${CMAKE_MODULE_PATH} ${PROJECT_SOURCE_DIR}/modules)
 
 #Allows the creation of test targets
 #Those targets may be defined in other subdirectory
