@@ -8,6 +8,11 @@ add_executable(test_target main.c cmockatest.c)
 #inclui o arquivo CodeCoverage.cmake
 include(CodeCoverage)
 
+APPEND_COVERAGE_COMPILER_FLAGS() 
+
+#informa que flags devem ser passadas ao compilador
+SET(CMAKE_C_FLAGS "-g -O0 -fprofile-arcs -ftest-coverage")
+
 #Sets EXECUTABLE_OUTPUT_PATH as the bin subdirectory in build dir
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
 
@@ -29,10 +34,6 @@ add_test(Test_Target ${PROJECT_BINARY_DIR}/bin/test_target)
 
 #Informa qual a target que deve ser cobertaS
 SETUP_TARGET_FOR_COVERAGE(NAME ${PROJECT_NAME}_coverage EXECUTABLE ${PROJECT_BINARY_DIR}/bin/test_target "coverage")
-
-#informa que flags devem ser passadas ao compilador
-SET(CMAKE_C_FLAGS "-g -O0 -fprofile-arcs -ftest-coverage")
-
 
 
 
