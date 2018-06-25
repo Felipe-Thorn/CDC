@@ -16,6 +16,8 @@ endif()
 message(STATUS "BINARY dir: " ${PROJECT_BINARY_DIR})
 message(STATUS "SOURCE dir: " ${PROJECT_SOURCE_DIR})
 
+set(${CMAKE_MODULE_PATH} ${PROJECT_SOURCE_DIR}/modules)
+
 #Allows the creation of test targets
 #Those targets may be defined in other subdirectory
 #but these directory need to be included
